@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Iti 💙 | A Journey of Love</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose-primary: #e11d48;
+            --rose-soft: #fff1f2;
+            --gold: #d4af37;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: #fffafa;
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="%23fb7185"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') 10 10, auto;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .font-romantic { font-family: 'Dancing Script', cursive; }
+        .font-elegant { font-family: 'Playfair Display', serif; }
+        
+        /* Magical Background Particles */
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+        }
+        .particle {
+            position: absolute;
+            pointer-events: none;
+            animation: floatUp linear infinite;
+        }
+        
+        /* Premium UI Elements */
+        .glass {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 40px rgba(225, 29, 72, 0.08);
+        }
+        .glass-dark {
+            background: rgba(159, 18, 57, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(159, 18, 57, 0.15);
+        }
+
+        /* Magical Text Reveal */
+        @keyframes unfurl {
+            0% { 
+                opacity: 0; 
+                transform: translateY(10px) scale(0.95); 
+                filter: blur(8px);
+                letter-spacing: -0.1em;
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+                filter: blur(0);
+                letter-spacing: normal;
+            }
+        }
+        .magical-text span {
+            display: inline-block;
+            opacity: 0;
+            animation: unfurl 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        @keyframes shimmerText {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        .shimmer-text {
+            background: linear-gradient(90deg, #9f1239, #e11d48, #9f1239);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmerText 4s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(4); opacity: 0; }
+        }
+        .ripple-effect {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            animation: ripple 0.8s ease-out forwards;
+            pointer-events: none;
+        }
+
+        /* Hover Glow */
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(225, 29, 72, 0.3);
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Soundwave Visualizer Animation */
+        @keyframes soundwave {
+            0%, 100% { height: 6px; opacity: 0.6; }
+            50% { height: 100%; opacity: 1; }
+        }
+        .animate-soundwave {
+            animation: soundwave 1s ease-in-out infinite;
+        }
+
+        /* Shake Animation for incorrect passcode */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-10px); }
+        }
+        .animate-shake {
+            animation: shake 0.4s ease-in-out;
+        }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 640px) {
+            .magical-text {
+                font-size: 1.25rem !important;
+                line-height: 1.6 !important;
+            }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

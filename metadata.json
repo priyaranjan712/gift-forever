@@ -1,0 +1,7 @@
+{
+  "name": "For Iti: A Valentine's Journey",
+  "description": "A private, immersive 8-day digital experience designed exclusively for Iti, celebrating the Valentine week with love, respect, and a gentle request to meet.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
