@@ -58,13 +58,13 @@ const App: React.FC = () => {
         setBlossomProgress(p => {
           if (p >= 100) {
             clearInterval(blossomTimerRef.current!);
-            if ('vibrate' in navigator) navigator.vibrate([100, 50, 100]);
+            // if ('vibrate' in navigator) navigator.vibrate([100, 50, 100]);
             setView('GALLERY');
             setBlossomProgress(0);
             setBlossomHolding(false);
             return 100;
           }
-          if ('vibrate' in navigator) navigator.vibrate(10);
+          // if ('vibrate' in navigator) navigator.vibrate(10);
           return p + 2;
         });
       }, 30);
