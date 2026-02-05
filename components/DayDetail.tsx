@@ -115,11 +115,23 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
     }
   }, [day.id, unlocked]);
 
+  // const triggerHaptic = (pattern: number | number[]) => {
+  //   if ('vibrate' in navigator) {
+  //     navigator.vibrate(pattern);
+  //   }
+  // };
+
+  // ============remove vibration==========
+  const ENABLE_HAPTIC = false;
+
   const triggerHaptic = (pattern: number | number[]) => {
+    if (!ENABLE_HAPTIC) return;
     if ('vibrate' in navigator) {
       navigator.vibrate(pattern);
     }
   };
+
+  // ======================================
 
   const addRipple = (e: React.MouseEvent | React.TouchEvent) => {
     const clientX = 'touches' in e ? e.touches[0].clientX : (e as React.MouseEvent).clientX;
@@ -140,7 +152,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
       onUnlocked(day.id);
     } else {
       setError(true);
-      triggerHaptic(200);
+      // triggerHaptic(200);
       setTimeout(() => setError(false), 500);
     }
   };
@@ -346,120 +358,120 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
         );
 
       case 5:
-          {
+        {
           const promises = ["Honesty", "Respect", "Safety", "Kindness", "Patience"];
           return (
             <div className="flex flex-col items-center space-y-8 sm:space-y-12 py-6 px-4">
               <p className="font-romantic text-2xl sm:text-3xl text-rose-800 text-center italic">"Connect the stars of my promises, Iti."</p>
               <div className="relative w-full max-w-sm h-48 sm:h-64 glass rounded-[30px] sm:rounded-[50px] overflow-hidden bg-rose-950/20 border-2 border-rose-100 flex items-center justify-center">
-                 <div className="grid grid-cols-3 gap-6 sm:gap-8">
-                    {promises.map((p, i) => (
-                      <div 
-                        key={p} 
-                        onClick={() => {
-                          if (!litHearts.includes(i)) {
-                            setLitHearts([...litHearts, i]);
-                            triggerHaptic(30);
-                          }
-                        }}
-                        className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center transition-all duration-1000 cursor-pointer
+                <div className="grid grid-cols-3 gap-6 sm:gap-8">
+                  {promises.map((p, i) => (
+                    <div
+                      key={p}
+                      onClick={() => {
+                        if (!litHearts.includes(i)) {
+                          setLitHearts([...litHearts, i]);
+                          triggerHaptic(30);
+                        }
+                      }}
+                      className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center transition-all duration-1000 cursor-pointer
                           ${litHearts.includes(i) ? 'bg-yellow-200 text-rose-900 scale-125 shadow-[0_0_15px_#fef08a]' : 'bg-rose-100/20 text-white/40 grayscale'}`}
-                      >
-                        ✨
-                      </div>
-                    ))}
-                 </div>
+                    >
+                      ✨
+                    </div>
+                  ))}
+                </div>
               </div>
               {litHearts.length >= promises.length && (
-                 <div className="animate-reveal-up p-6 sm:p-10 glass rounded-[35px] sm:rounded-[60px] border-2 border-rose-400 bg-white/95 shadow-xl text-center">
-                    <p className="text-rose-950 font-romantic text-2xl sm:text-4xl italic leading-relaxed px-2">
-                      "I'll keep your heart safe in my constellations, Iti."
-                    </p>
-                 </div>
+                <div className="animate-reveal-up p-6 sm:p-10 glass rounded-[35px] sm:rounded-[60px] border-2 border-rose-400 bg-white/95 shadow-xl text-center">
+                  <p className="text-rose-950 font-romantic text-2xl sm:text-4xl italic leading-relaxed px-2">
+                    "I'll keep your heart safe in my constellations, Iti."
+                  </p>
+                </div>
               )}
             </div>
           );
         }
 
-        // upgrade from chatgpt =============================================================
-        // {
-        //   const promises = ["Honesty", "Respect", "Safety", "Kindness", "Patience"];
+      // upgrade from chatgpt =============================================================
+      // {
+      //   const promises = ["Honesty", "Respect", "Safety", "Kindness", "Patience"];
 
-        //   return (
-        //     <div className="flex flex-col items-center space-y-10 py-6 px-4">
-        //       <p className="font-romantic text-2xl sm:text-3xl text-rose-800 text-center italic">
-        //         "Connect the stars of my promises, Iti."
-        //       </p>
+      //   return (
+      //     <div className="flex flex-col items-center space-y-10 py-6 px-4">
+      //       <p className="font-romantic text-2xl sm:text-3xl text-rose-800 text-center italic">
+      //         "Connect the stars of my promises, Iti."
+      //       </p>
 
-        //       {/* Sky */}
-        //       <div
-        //         className="relative w-full max-w-xs sm:max-w-sm h-80 glass rounded-[40px]
-        //            bg-gradient-to-b from-rose-900/30 to-rose-950/40
-        //            border border-rose-200 flex items-center justify-center"
-        //       >
-        //         {/* Vertical guide line */}
-        //         <div className="absolute w-[2px] h-[75%] bg-rose-200/30" />
+      //       {/* Sky */}
+      //       <div
+      //         className="relative w-full max-w-xs sm:max-w-sm h-80 glass rounded-[40px]
+      //            bg-gradient-to-b from-rose-900/30 to-rose-950/40
+      //            border border-rose-200 flex items-center justify-center"
+      //       >
+      //         {/* Vertical guide line */}
+      //         <div className="absolute w-[2px] h-[75%] bg-rose-200/30" />
 
-        //         {/* Stars column */}
-        //         <div className="relative flex flex-col items-center gap-8 sm:gap-10">
-        //           {promises.map((p, i) => {
-        //             const active = litHearts.includes(i);
-        //             const canActivate = i === litHearts.length;
+      //         {/* Stars column */}
+      //         <div className="relative flex flex-col items-center gap-8 sm:gap-10">
+      //           {promises.map((p, i) => {
+      //             const active = litHearts.includes(i);
+      //             const canActivate = i === litHearts.length;
 
-        //             return (
-        //               <div
-        //                 key={p}
-        //                 onClick={() => {
-        //                   if (canActivate) {
-        //                     setLitHearts((prev) => [...prev, i]);
-        //                     triggerHaptic(40);
-        //                   }
-        //                 }}
-        //                 className={`relative cursor-pointer transition-all duration-700
-        //           ${active ? "scale-125" : "opacity-50"}
-        //           ${canActivate ? "opacity-100" : "pointer-events-none"}`}
-        //               >
-        //                 {/* Star */}
-        //                 <div
-        //                   className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full
-        //             flex items-center justify-center
-        //             animate-[float_4s_ease-in-out_infinite]
-        //             ${active
-        //                       ? "bg-yellow-200 text-rose-900 shadow-[0_0_20px_#fef08a]"
-        //                       : "bg-white/10 text-white/40"
-        //                     }`}
-        //                 >
-        //                   ✨
-        //                 </div>
+      //             return (
+      //               <div
+      //                 key={p}
+      //                 onClick={() => {
+      //                   if (canActivate) {
+      //                     setLitHearts((prev) => [...prev, i]);
+      //                     triggerHaptic(40);
+      //                   }
+      //                 }}
+      //                 className={`relative cursor-pointer transition-all duration-700
+      //           ${active ? "scale-125" : "opacity-50"}
+      //           ${canActivate ? "opacity-100" : "pointer-events-none"}`}
+      //               >
+      //                 {/* Star */}
+      //                 <div
+      //                   className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full
+      //             flex items-center justify-center
+      //             animate-[float_4s_ease-in-out_infinite]
+      //             ${active
+      //                       ? "bg-yellow-200 text-rose-900 shadow-[0_0_20px_#fef08a]"
+      //                       : "bg-white/10 text-white/40"
+      //                     }`}
+      //                 >
+      //                   ✨
+      //                 </div>
 
-        //                 {/* Promise label */}
-        //                 {active && (
-        //                   <span
-        //                     className="absolute left-16 sm:left-20 top-1/2 -translate-y-1/2
-        //                        text-xs sm:text-sm italic text-yellow-100
-        //                        animate-fade-in whitespace-nowrap"
-        //                   >
-        //                     {p}
-        //                   </span>
-        //                 )}
-        //               </div>
-        //             );
-        //           })}
-        //         </div>
-        //       </div>
+      //                 {/* Promise label */}
+      //                 {active && (
+      //                   <span
+      //                     className="absolute left-16 sm:left-20 top-1/2 -translate-y-1/2
+      //                        text-xs sm:text-sm italic text-yellow-100
+      //                        animate-fade-in whitespace-nowrap"
+      //                   >
+      //                     {p}
+      //                   </span>
+      //                 )}
+      //               </div>
+      //             );
+      //           })}
+      //         </div>
+      //       </div>
 
-        //       {/* Final Reveal */}
-        //       {litHearts.length === promises.length && (
-        //         <div className="animate-reveal-up p-8 sm:p-12 glass rounded-[50px]
-        //                 bg-white/95 border border-rose-400 shadow-2xl text-center">
-        //           <p className="font-romantic text-2xl sm:text-4xl italic text-rose-900 leading-relaxed">
-        //             "I'll keep your heart safe<br />in my constellations, Iti."
-        //           </p>
-        //         </div>
-        //       )}
-        //     </div>
-        //   );
-        // }
+      //       {/* Final Reveal */}
+      //       {litHearts.length === promises.length && (
+      //         <div className="animate-reveal-up p-8 sm:p-12 glass rounded-[50px]
+      //                 bg-white/95 border border-rose-400 shadow-2xl text-center">
+      //           <p className="font-romantic text-2xl sm:text-4xl italic text-rose-900 leading-relaxed">
+      //             "I'll keep your heart safe<br />in my constellations, Iti."
+      //           </p>
+      //         </div>
+      //       )}
+      //     </div>
+      //   );
+      // }
       // ==================================================================================
 
       case 6:
@@ -765,7 +777,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
             </div>
             <button type="submit" className="w-full py-4 sm:py-6 bg-rose-600 text-white rounded-[25px] sm:rounded-[35px] font-black tracking-widest shadow-xl hover:bg-rose-700 active:scale-95 transition-all uppercase text-base">Reveal Chapter</button>
           </form>
-           <p className="text-center mt-12 text-[10px] uppercase font-black text-rose-300 tracking-[0.4em] italic">Hint: Try "{day.passcode.toLowerCase()}"</p>
+          <p className="text-center mt-12 text-[10px] uppercase font-black text-rose-300 tracking-[0.4em] italic">Hint: Try "{day.passcode.toLowerCase()}"</p>
         </div>
       </div>
     );
