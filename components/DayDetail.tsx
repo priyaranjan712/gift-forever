@@ -765,6 +765,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
             </div>
             <button type="submit" className="w-full py-4 sm:py-6 bg-rose-600 text-white rounded-[25px] sm:rounded-[35px] font-black tracking-widest shadow-xl hover:bg-rose-700 active:scale-95 transition-all uppercase text-base">Reveal Chapter</button>
           </form>
+           <p className="text-center mt-12 text-[10px] uppercase font-black text-rose-300 tracking-[0.4em] italic">Hint: Try "{day.passcode.toLowerCase()}"</p>
         </div>
       </div>
     );

@@ -3,11 +3,11 @@ import { ValentineDay, ChocolateItem, MemoryPhoto } from './types';
 
 // =======================
 import roseMusic from "./music/shaky.mp3";
-import proposeMusic from "./music/jugraafiya.mp3";
+import proposeMusic from "./music/chaarKadam.mp3";
 import chocolateMusic from "./music/nadaaniyan.mp3";
-import teddyMusic from "./music/aisaGeetGaun.mp3";
-import promiseMusic from "./music/chaarKadam.mp3";
-import hugMusic from "./music/mainHoonNa.mp3";
+import teddyMusic from "./music/mainHoonNa.mp3";
+import promiseMusic from "./music/nazm.mp3";
+import hugMusic from "./music/maheroo.mp3";
 import kissMusic from "./music/humsafar.mp3";
 import valentineMusic from "./music/dooron.mp3";
 // -----------------------------------------------
@@ -18,7 +18,7 @@ import photo4 from "./photos/memory3.jpeg";
 import photo5 from "./photos/iti2.jpeg";
 import photo6 from "./photos/memory4.jpeg";
 
-// ---------------------------more photos---
+// ---------------------------more photos----------------
 // import photo7 from "./photos/memory7.jpg";
 // import photo8 from "./photos/memory8.jpg";
 // import photo9 from "./photos/memory9.jpg";
@@ -30,7 +30,7 @@ import photo6 from "./photos/memory4.jpeg";
 // =======================
 
 export const ITI_NICKNAME = "iti"; // Login password
-export const GALLERY_PASSWORD = "soul"; // Password for the memory gallery
+export const GALLERY_PASSWORD = "cherry"; // Password for the memory gallery
 
 export const VALENTINE_DAYS: ValentineDay[] = [
   {

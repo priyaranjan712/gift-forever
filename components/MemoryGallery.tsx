@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { MEMORY_PHOTOS, GALLERY_PASSWORD } from '../constants';
 import MusicPlayer from './MusicPlayer';
 // ==============================
-import memoryGalleryMusic from '../music/ishq-bulaava.mp3';
+import memoryGalleryMusic from '../music/ishqBulaava.mp3';
 // ===============================
 interface MemoryGalleryProps {
   onBack: () => void;
