@@ -305,7 +305,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
             {holdProgress >= 100 && (
               <div className="glass p-8 rounded-[40px] border-2 border-rose-300 animate-reveal-up text-center">
                 <p className="font-romantic text-3xl text-rose-950 italic leading-relaxed">
-                  "It beats like this every time I see your name on my screen, Iti."
+                  "It beats like this every time I am thinking about you, Iti."
                 </p>
               </div>
             )}

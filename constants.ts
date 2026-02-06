@@ -45,7 +45,7 @@ export const GALLERY_PASSWORD = "gudu"; // Password for the memory gallery
 export const VALENTINE_DAYS: ValentineDay[] = [
   {
     id: 1,
-    date: "2025-02-07",
+    date: "2026-02-07",
     title: "Rose Day",
     theme: "Warm Affection",
     emoji: "🌹",
@@ -56,7 +56,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 2,
-    date: "2025-02-08",
+    date: "2026-02-08",
     title: "Propose Day",
     theme: "Heartfelt Words",
     emoji: "💍",
@@ -67,7 +67,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 3,
-    date: "2025-02-09",
+    date: "2026-02-09",
     title: "Chocolate Day",
     theme: "Sweetest Soul",
     emoji: "🍫",
@@ -78,7 +78,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 4,
-    date: "2025-02-10",
+    date: "2026-02-10",
     title: "Teddy Day",
     theme: "Warm Hugs",
     emoji: "🧸",
@@ -89,7 +89,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 5,
-    date: "2025-02-11",
+    date: "2026-02-11",
     title: "Promise Day",
     theme: "Silent Vows",
     emoji: "🤝",
@@ -100,7 +100,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 6,
-    date: "2025-02-12",
+    date: "2026-02-12",
     title: "Hug Day",
     theme: "Distance Apart",
     emoji: "🤗",
@@ -111,7 +111,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 7,
-    date: "2025-02-13",
+    date: "2026-02-13",
     title: "Kiss Day",
     theme: "Pure Connection",
     emoji: "😘",
@@ -122,7 +122,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 8,
-    date: "2025-02-14",
+    date: "2026-02-14",
     title: "Valentine's Day",
     theme: "The Grand Gesture",
     emoji: "❤️",
@@ -134,12 +134,12 @@ export const VALENTINE_DAYS: ValentineDay[] = [
 ];
 
 export const CHOCOLATE_MESSAGES: ChocolateItem[] = [
-  { id: 1, message: "Your laugh is my favorite notification." },
-  { id: 2, message: "I love how you always listen to my random stories." },
-  { id: 3, message: "You have a heart of pure gold, Iti." },
-  { id: 4, message: "Meeting you was the best part of my year." },
-  { id: 5, message: "Your kindness makes me want to be a better person." },
-  { id: 6, message: "I appreciate the way you respect my space too." }
+  { id: 1, message: "Some smiles are sweeter than chocolate… yours is one." },
+  { id: 2, message: "Every conversation with you feels like unwrapping a gift." },
+  { id: 3, message: "Every time I think of you, the world feels softer." },
+  { id: 4, message: "You’re the unexpected chapter that makes my story worth rereading." },
+  { id: 5, message: "You remind me that kindness can be the most beautiful strength." },
+  { id: 6, message: "I don’t need a playlist when your voice is my favorite song." }
 ];
 
 
