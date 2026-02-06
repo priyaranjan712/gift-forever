@@ -228,7 +228,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
           <div className="space-y-8 text-center py-4 px-2">
             {interactionState !== 'MATCH_DONE' ? (
               <div className="max-w-xs sm:max-w-md mx-auto space-y-6 sm:space-y-8">
-                <p className="font-romantic text-2xl sm:text-3xl text-rose-800 italic">"Match the petals, Iti..."</p>
+                <p className="font-romantic text-2xl sm:text-3xl text-rose-800 italic">"Match the petals to see how unique you are....."</p>
                 <div className="grid grid-cols-4 gap-2 sm:gap-3">
                   {matchGrid.map((card) => (
                     <div
@@ -237,7 +237,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
                       className={`aspect-square rounded-xl sm:rounded-2xl glass border-2 transition-all duration-500 cursor-pointer flex items-center justify-center text-2xl sm:text-3xl
                         ${card.flipped || card.matched ? 'bg-white border-rose-300 rotate-0' : 'bg-rose-50 border-white/50 rotate-y-180'}`}
                     >
-                      {(card.flipped || card.matched) ? (['🌸', '🌺', '🌷', '🏵️'][card.type - 1]) : '🌹'}
+                      {(card.flipped || card.matched) ? (['🌻', '🌺', '🌼', '🏵️'][card.type - 1]) : '🌹'}
                     </div>
                   ))}
                 </div>
@@ -247,7 +247,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
                 <div className="text-7xl sm:text-9xl animate-float drop-shadow-2xl">🌹</div>
                 <div className="mt-8 p-6 sm:p-10 glass rounded-[35px] sm:rounded-[60px] border-2 border-rose-200 shadow-xl bg-white/70">
                   <p className="font-romantic text-2xl sm:text-4xl text-rose-900 leading-relaxed px-2">
-                    "Every detail about you is beautiful, Iti."
+                    "Just like these petals, every detail about you is beautiful, Fulei."
                   </p>
                 </div>
               </div>

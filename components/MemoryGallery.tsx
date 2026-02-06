@@ -55,7 +55,7 @@ const MemoryGallery: React.FC<MemoryGalleryProps> = ({ onBack }) => {
           <button onClick={onBack} className="text-rose-400 font-bold uppercase tracking-widest text-[9px] hover:text-rose-600 transition-colors">
             ← Return to Chapters
           </button>
-          <p className="text-[9px] text-rose-200 uppercase tracking-widest italic pt-2">Hint: Try "{GALLERY_PASSWORD}"</p>
+          <p className="text-[9px] text-rose-200 uppercase tracking-widest italic pt-2">Hint: It's my name</p>
         </div>
       </div>
     );
