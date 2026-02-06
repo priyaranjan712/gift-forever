@@ -154,7 +154,7 @@ export const MEMORY_PHOTOS: MemoryPhoto[] = [
   { id: 6, url: photo6, caption: "Oops, us", rotation: 3 },
 
   // --------------more photos------
-  { id: 7, url: photo7, caption: "A Quiet Moment", rotation: -4 },
+  { id: 7, url: photo7, caption: "Soft but sus", rotation: -4 },
   { id: 8, url: photo8, caption: "Just vibing", rotation: 1 },
   { id: 9, url: photo9, caption: "Friendly? sure", rotation: -2 },
   { id: 10, url: photo10, caption: "With fav dish🐢", rotation: 3 },
