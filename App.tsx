@@ -84,7 +84,7 @@ const App: React.FC = () => {
         </div>
 
         <div className="space-y-3 sm:space-y-4">
-          <h1 className="text-4xl sm:text-6xl font-romantic text-rose-950">Privately for Iti</h1>
+          <h1 className="text-4xl sm:text-6xl font-romantic text-rose-950">For Iti, My Timeless Muse</h1>
           <p className="text-rose-700 font-medium tracking-wide text-xs sm:text-sm px-4 italic">A journey I built with words, just for you.</p>
         </div>
 
@@ -120,7 +120,7 @@ const App: React.FC = () => {
           <div className="inline-block px-4 py-1.5 glass-dark rounded-full border border-rose-200/50 mb-2">
             <span className="text-rose-900 font-black text-[9px] sm:text-[10px] tracking-[0.3em] uppercase">The Valentine Chronicles</span>
           </div>
-          <h1 className="text-4xl sm:text-7xl font-romantic text-rose-950">A Little Universe for Iti</h1>
+          <h1 className="text-4xl sm:text-7xl font-romantic text-rose-950">A Cozy World with Iti</h1>
           <p className="text-rose-700 font-elegant italic text-lg sm:text-3xl shimmer-text px-4">"A celebration of us, one heartbeat at a time."</p>
         </header>
 

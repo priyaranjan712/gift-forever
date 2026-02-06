@@ -803,7 +803,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
           <div className="text-center space-y-8 sm:space-y-12">
             <div className="inline-flex items-center space-x-3 px-6 py-2 glass-dark rounded-full border border-rose-200/50">
               <div className="w-2 h-2 rounded-full bg-rose-500 animate-ping"></div>
-              <span className="text-rose-900 font-black text-[9px] sm:text-[12px] tracking-[0.2em] uppercase italic">Made for Iti 💙</span>
+              <span className="text-rose-900 font-black text-[9px] sm:text-[12px] tracking-[0.2em] uppercase italic">Designed with care for Iti</span>
             </div>
 
             <h1 className="text-5xl sm:text-9xl font-romantic text-rose-900 drop-shadow-xl animate-float px-4">{day.emoji} {day.title}</h1>

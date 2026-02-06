@@ -24,7 +24,7 @@ import photo8 from "./photos/gi10.jpeg";
 import photo9 from "./photos/memory2.jpeg";
 import photo10 from "./photos/gi7.jpeg";
 import photo11 from "./photos/iti2.jpeg";
-import photo12 from "./photos/gi9.jpeg";
+import photo12 from "./photos/gi13.jpeg";
 import photo13 from "./photos/gi5.jpeg";
 import photo14 from "./photos/memory3.jpeg";
 import photo15 from "./photos/gi4.jpeg";
@@ -51,7 +51,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
     emoji: "🌹",
     musicUrl: roseMusic,
     musicMood: "Soft instrumental",
-    content: "Iti, if feelings were roses, this one would be for how safe you make me feel. Just like a rose, your presence adds beauty and a gentle fragrance to my life.",
+    content: "Iti, if feelings were roses, this one would be for how safe you make me feel. Just like a rose, your presence adds beauty and a gentle fragrance to my life. You are the grace in my world.",
     passcode: "ROSE"
   },
   {
@@ -146,26 +146,26 @@ export const CHOCOLATE_MESSAGES: ChocolateItem[] = [
 
 // =====================
 export const MEMORY_PHOTOS: MemoryPhoto[] = [
-  { id: 1, url: photo1, caption: "True Smile", rotation: -3 },
-  { id: 2, url: photo2, caption: "Sweet Hello", rotation: 2 },
-  { id: 3, url: photo3, caption: "Perfect Day", rotation: -1 },
+  { id: 1, url: photo1, caption: "Unfairly cute", rotation: -3 },
+  { id: 2, url: photo2, caption: "Together somehow", rotation: 2 },
+  { id: 3, url: photo3, caption: "Accidentally obsessed", rotation: -1 },
   { id: 4, url: photo4, caption: "One More Memory", rotation: 4 },
-  { id: 5, url: photo5, caption: "My Home", rotation: -2 },
-  { id: 6, url: photo6, caption: "Between Seconds", rotation: 3 },
+  { id: 5, url: photo5, caption: "Dangerously charming🔥", rotation: -2 },
+  { id: 6, url: photo6, caption: "Oops, us", rotation: 3 },
 
   // --------------more photos------
   { id: 7, url: photo7, caption: "A Quiet Moment", rotation: -4 },
-  { id: 8, url: photo8, caption: "Unplanned Smile", rotation: 1 },
-  { id: 9, url: photo9, caption: "Just Like This", rotation: -2 },
-  { id: 10, url: photo10, caption: "Still My Favorite", rotation: 3 },
-  { id: 11, url: photo11, caption: "Only Us", rotation: -1 },
-  { id: 12, url: photo12, caption: "Still With Me", rotation: 2 },
-  { id: 13, url: photo13, caption: "A Soft Look", rotation: -2 },
-  { id: 14, url: photo14, caption: "That Moment", rotation: 3 },
-  { id: 15, url: photo15, caption: "Unsaid Things", rotation: -1 },
-  { id: 16, url: photo16, caption: "Still Smiling", rotation: 2 },
-  { id: 17, url: photo17, caption: "Just Like This", rotation: -3 },
-  { id: 18, url: photo18, caption: "Forever Us !!", rotation: 1 },
+  { id: 8, url: photo8, caption: "Just vibing", rotation: 1 },
+  { id: 9, url: photo9, caption: "Friendly? sure", rotation: -2 },
+  { id: 10, url: photo10, caption: "With fav dish🐢", rotation: 3 },
+  { id: 11, url: photo11, caption: "Heart thief", rotation: -1 },
+  { id: 12, url: photo12, caption: "Kinda special 💘", rotation: 2 },
+  { id: 13, url: photo13, caption: "My soft spot", rotation: -2 },
+  { id: 14, url: photo14, caption: "Kind of forever", rotation: 3 },
+  { id: 15, url: photo15, caption: "My favorite distraction", rotation: -1 },
+  { id: 16, url: photo16, caption: "My weakness", rotation: 2 },
+  { id: 17, url: photo17, caption: "Perfect Day", rotation: -3 },
+  { id: 18, url: photo18, caption: "Almost love😉", rotation: 1 },
   // { id: 19, url: photo19, caption: "A Memory Kept", rotation: -2 },
   // { id: 20, url: photo20, caption: "Quietly Yours", rotation: 3 },
   // { id: 21, url: photo21, caption: "Felt, Not Said", rotation: -1 },
