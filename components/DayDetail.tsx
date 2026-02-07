@@ -98,26 +98,16 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
   // Teddy Day
 
   // ++++++++++++++++++++++++++++++ new add +++++++++++++++++++++++++
-  //     const [heartPos, setHeartPos] = useState({ x: 0, y: 0 });
-  // const [isGrabbing, setIsGrabbing] = useState(false);
-
-  // Add a cheeky "speed" check for the crazy animations
-  // const [velocity, setVelocity] = useState(0);
-  // At the top of your component:
+  // ----teddy----
   const [teddyAction, setTeddyAction] = useState("IDLE");
   const [feedbackMsg, setFeedbackMsg] = useState("");
+  //  ----hug ----------
+  // Use local states within the component:
+  const [isHugActive, setIsHugActive] = useState(false);
+  const [hugComplete, setHugComplete] = useState(false);
+  const [progress, setProgress] = useState(0);
   // ----------------------------------------------------
-  // Add these to your state section
-  // const [isPoked, setIsPoked] = useState(false);
-  // const [isDizzy, setIsDizzy] = useState(false);
-  // const [isDragging, setIsDragging] = useState(false);
 
-  // A little helper for randomizing reactions
-  // const reactions = {
-  //   poke: ["Hey! That tickles! 😂", "Boop! 🧸", "Direct hit! ❤️"],
-  //   drag: ["Wheeeee! ☁️", "I can see my house from here! 🏠", "Fly me to the moon!"],
-  //   idle: ["Teddy is waiting for a hug...", "Iti + Teddy = Besties ♾️"]
-  // };
   // ++++++++++++++++++++++++++++++
   // const [teddyState, setTeddyState] = useState<'IDLE' | 'HAPPY' | 'SHY'>('IDLE');
   // const [feedbackMsg, setFeedbackMsg] = useState('');
@@ -835,54 +825,195 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
       // ========================= end promise ===============================
 
 
-      case 6:
+      // case 6:
+      //   return (
+      //     <div className="relative h-[400px] sm:h-[480px] w-full max-w-xs sm:max-w-sm mx-auto flex flex-col items-center justify-center overflow-hidden rounded-[40px] sm:rounded-[80px] glass border-2 border-rose-200 shadow-xl">
+      //       {!interactionState ? (
+      //         <div className="text-center space-y-8 sm:space-y-12 px-6">
+      //           <p className="font-romantic text-2xl sm:text-4xl text-rose-800 leading-tight italic">"Place both palms to close the gap, Iti..."</p>
+      //           <div className="flex flex-col space-y-6 sm:space-y-10">
+      //             <div
+      //               onPointerDown={() => { setMultiTouch(p => ({ ...p, p1: true })); triggerHaptic(10); }}
+      //               onPointerUp={() => setMultiTouch(p => ({ ...p, p1: false }))}
+      //               className={`w-24 h-24 sm:w-32 h-32 rounded-full glass border-2 sm:border-4 flex items-center justify-center text-4xl sm:text-5xl transition-all duration-500 ${multiTouch.p1 ? 'bg-rose-500 border-rose-300 scale-110 sm:scale-125 shadow-xl' : 'border-rose-100 opacity-60'}`}
+      //             >
+      //               👋
+      //             </div>
+      //             <div
+      //               onPointerDown={() => { setMultiTouch(p => ({ ...p, p2: true })); triggerHaptic(10); }}
+      //               onPointerUp={() => setMultiTouch(p => ({ ...p, p2: false }))}
+      //               className={`w-24 h-24 sm:w-32 h-32 rounded-full glass border-2 sm:border-4 flex items-center justify-center text-4xl sm:text-5xl transition-all duration-500 ${multiTouch.p2 ? 'bg-rose-500 border-rose-300 scale-110 sm:scale-125 shadow-xl' : 'border-rose-100 opacity-60'}`}
+      //             >
+      //               👋
+      //             </div>
+      //           </div>
+      //           {(multiTouch.p1 && multiTouch.p2) && (
+      //             <button
+      //               onClick={() => { setInteractionState(true); triggerHaptic([200, 300, 500, 800, 1500]); }}
+      //               className="mt-4 px-8 py-4 bg-rose-600 text-white rounded-full font-black tracking-widest animate-bounce shadow-xl text-sm"
+      //             >
+      //               HUG ME, ITI
+      //             </button>
+      //           )}
+      //         </div>
+      //       ) : (
+      //         <div className="absolute inset-0 bg-rose-600 flex flex-col items-center justify-center animate-pulse p-6 text-center space-y-6">
+      //           <div className="text-7xl sm:text-9xl mb-2 scale-125 sm:scale-150 drop-shadow-xl">🤗</div>
+      //           <p className="text-white font-romantic text-4xl sm:text-6xl leading-tight">Hold Tight.</p>
+      //           <p className="text-white/90 font-elegant italic text-lg sm:text-2xl leading-relaxed px-2">
+      //             "Can you feel it, Iti? The way the world stops?"
+      //           </p>
+      //           <InteractiveButton
+      //             onClick={() => setInteractionState(false)}
+      //             className="mt-8 text-white/50 text-[8px] uppercase tracking-[0.4em] font-black border-b border-white/30 pb-1"
+      //           >
+      //             (Pause the Embrace)
+      //           </InteractiveButton>
+      //         </div>
+      //       )}
+      //     </div>
+      //   );
+
+      // =========================== update hug ===================================
+      case 6: {
         return (
-          <div className="relative h-[400px] sm:h-[480px] w-full max-w-xs sm:max-w-sm mx-auto flex flex-col items-center justify-center overflow-hidden rounded-[40px] sm:rounded-[80px] glass border-2 border-rose-200 shadow-xl">
-            {!interactionState ? (
-              <div className="text-center space-y-8 sm:space-y-12 px-6">
-                <p className="font-romantic text-2xl sm:text-4xl text-rose-800 leading-tight italic">"Place both palms to close the gap, Iti..."</p>
-                <div className="flex flex-col space-y-6 sm:space-y-10">
-                  <div
-                    onPointerDown={() => { setMultiTouch(p => ({ ...p, p1: true })); triggerHaptic(10); }}
-                    onPointerUp={() => setMultiTouch(p => ({ ...p, p1: false }))}
-                    className={`w-24 h-24 sm:w-32 h-32 rounded-full glass border-2 sm:border-4 flex items-center justify-center text-4xl sm:text-5xl transition-all duration-500 ${multiTouch.p1 ? 'bg-rose-500 border-rose-300 scale-110 sm:scale-125 shadow-xl' : 'border-rose-100 opacity-60'}`}
+          <div className="relative h-full w-full flex flex-col items-center bg-[#fffcfc] overflow-hidden touch-none">
+
+            {/* 1. THE RADIATING HEAT (Visual background) */}
+            <motion.div
+              animate={{
+                scale: isHugActive ? [1, 1.2, 1] : 1,
+                opacity: isHugActive ? 0.6 : 0.2,
+                backgroundColor: isHugActive ? "#fda4af" : "#fff1f2"
+              }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              className="absolute inset-0 z-0 blur-[100px] rounded-full"
+            />
+
+            {/* 2. HEADER */}
+            <div className="relative z-20 pt-12 text-center px-8">
+              <h2 className="text-rose-800 font-romantic text-3xl italic">
+                {hugComplete ? "The Warmest Embrace" : "Feel the Warmth"}
+              </h2>
+              <p className="text-rose-400 text-[9px] font-black uppercase tracking-[0.4em] mt-2">
+                {hugComplete ? "Connection Established" : "Hold the scanner to send a hug"}
+              </p>
+            </div>
+
+            {/* 3. THE INTERACTIVE CORE */}
+            <div className="relative flex-1 w-full flex items-center justify-center z-10">
+              {!hugComplete ? (
+                <div className="relative">
+                  {/* Ripple Effect */}
+                  {isHugActive && (
+                    <motion.div
+                      initial={{ scale: 0, opacity: 1 }}
+                      animate={{ scale: 4, opacity: 0 }}
+                      transition={{ repeat: Infinity, duration: 1.5 }}
+                      className="absolute inset-0 bg-rose-400 rounded-full"
+                    />
+                  )}
+
+                  {/* THE SCANNER BUTTON */}
+                  <motion.button
+                    onPointerDown={() => {
+                      setIsHugActive(true);
+                      triggerHaptic([20, 10, 20]);
+                    }}
+                    onPointerUp={() => {
+                      setIsHugActive(false);
+                      setProgress(0);
+                    }}
+                    className="relative w-32 h-32 bg-white rounded-full shadow-2xl border-4 border-rose-100 flex items-center justify-center overflow-hidden"
                   >
-                    👋
-                  </div>
-                  <div
-                    onPointerDown={() => { setMultiTouch(p => ({ ...p, p2: true })); triggerHaptic(10); }}
-                    onPointerUp={() => setMultiTouch(p => ({ ...p, p2: false }))}
-                    className={`w-24 h-24 sm:w-32 h-32 rounded-full glass border-2 sm:border-4 flex items-center justify-center text-4xl sm:text-5xl transition-all duration-500 ${multiTouch.p2 ? 'bg-rose-500 border-rose-300 scale-110 sm:scale-125 shadow-xl' : 'border-rose-100 opacity-60'}`}
-                  >
-                    👋
-                  </div>
+                    {/* Filling progress inside the button */}
+                    <motion.div
+                      animate={{ height: `${progress}%` }}
+                      className="absolute bottom-0 w-full bg-rose-500/20"
+                    />
+
+                    <div className="relative flex flex-col items-center">
+                      <span className="text-4xl mb-1">{isHugActive ? "🫂" : "✋"}</span>
+                      <span className="text-[8px] font-bold text-rose-500 uppercase">Hold</span>
+                    </div>
+
+                    {/* Progress logic hidden timer */}
+                    {isHugActive && (
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: "100%" }}
+                        transition={{ duration: 3, ease: "linear" }}
+                        onUpdate={(latest) => {
+                          // Update the local progress for visual feedback
+                          const p = parseFloat(latest.width);
+                          setProgress(p);
+                          if (p >= 99) {
+                            setHugComplete(true);
+                            triggerHaptic([50, 100, 50, 100]);
+                          }
+                        }}
+                      />
+                    )}
+                  </motion.button>
                 </div>
-                {(multiTouch.p1 && multiTouch.p2) && (
-                  <button
-                    onClick={() => { setInteractionState(true); triggerHaptic([200, 300, 500, 800, 1500]); }}
-                    className="mt-4 px-8 py-4 bg-rose-600 text-white rounded-full font-black tracking-widest animate-bounce shadow-xl text-sm"
-                  >
-                    HUG ME, ITI
-                  </button>
-                )}
-              </div>
-            ) : (
-              <div className="absolute inset-0 bg-rose-600 flex flex-col items-center justify-center animate-pulse p-6 text-center space-y-6">
-                <div className="text-7xl sm:text-9xl mb-2 scale-125 sm:scale-150 drop-shadow-xl">🤗</div>
-                <p className="text-white font-romantic text-4xl sm:text-6xl leading-tight">Hold Tight.</p>
-                <p className="text-white/90 font-elegant italic text-lg sm:text-2xl leading-relaxed px-2">
-                  "Can you feel it, Iti? The way the world stops?"
-                </p>
-                <InteractiveButton
-                  onClick={() => setInteractionState(false)}
-                  className="mt-8 text-white/50 text-[8px] uppercase tracking-[0.4em] font-black border-b border-white/30 pb-1"
+              ) : (
+                /* SUCCESS STATE - THE REVEAL */
+                <motion.div
+                  initial={{ scale: 0, rotate: -10 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  className="w-[85%] max-w-sm"
                 >
-                  (Pause the Embrace)
-                </InteractiveButton>
-              </div>
-            )}
+                  <div className="glass p-8 rounded-[3rem] border-2 border-white bg-white/90 shadow-[0_20px_50px_rgba(251,113,133,0.3)] text-center relative overflow-hidden">
+                    {/* Floating Hearts inside the card */}
+                    <div className="absolute -top-4 -right-4 text-4xl animate-bounce">💖</div>
+                    <div className="absolute -bottom-4 -left-4 text-4xl animate-bounce delay-150">🌸</div>
+
+                    <h3 className="font-romantic text-3xl text-rose-950 mb-4 italic">Iti, You're Home.</h3>
+                    <p className="text-rose-800 text-sm leading-relaxed italic mb-4 px-2">
+                      "A hug is a handshake from the heart. Every time you press that button, know that I'm holding you tight on the other side."
+                    </p>
+
+                    <div className="flex justify-center gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          animate={{ scale: [1, 1.5, 1] }}
+                          transition={{ repeat: Infinity, delay: i * 0.2 }}
+                          className="w-1.5 h-1.5 rounded-full bg-rose-400"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </div>
+
+            {/* 4. ACTIVITY FEEDBACK */}
+            <div className="pb-20 z-20 h-10">
+              <AnimatePresence>
+                {isHugActive && !hugComplete && (
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    className="text-rose-600 font-bold text-xs italic"
+                  >
+                    Syncing our warmth... {Math.round(progress)}%
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* FOOTER DECOR */}
+            <div className="absolute bottom-6 flex gap-8 opacity-20">
+              <span className="text-2xl">☁️</span>
+              <span className="text-2xl">✨</span>
+              <span className="text-2xl">☁️</span>
+            </div>
           </div>
         );
+      }
+      // =========================== end Hug ======================================
 
       case 7:
         return (
