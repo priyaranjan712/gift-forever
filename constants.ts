@@ -78,7 +78,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 4,
-    date: "2025-02-10",
+    date: "2026-02-10",
     title: "Teddy Day",
     theme: "Warm Hugs",
     emoji: "🧸",
@@ -89,7 +89,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 5,
-    date: "2025-02-11",
+    date: "2026-02-11",
     title: "Promise Day",
     theme: "Silent Vows",
     emoji: "🤝",
@@ -100,7 +100,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 6,
-    date: "2025-02-12",
+    date: "2026-02-12",
     title: "Hug Day",
     theme: "Distance Apart",
     emoji: "🤗",
