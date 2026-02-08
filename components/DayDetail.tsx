@@ -340,7 +340,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
                 className="aspect-square glass rounded-[30px] sm:rounded-[40px] flex items-center justify-center text-4xl sm:text-5xl border border-rose-100/30 hover:border-rose-300 group shadow-lg bg-white/40"
               >
                 <span className="group-hover:scale-125 group-hover:rotate-12 transition-transform duration-700">
-                  {['🍫', '🍩', '🍪', '🍬', '🧁', '🍰'][i]}
+                  {['🍫', '🍩', '🍪', '🍬', '🧁', '🍭'][i]}
                 </span>
               </InteractiveButton>
             ))}
@@ -573,14 +573,14 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
       //         {/* DYNAMIC SVG CONNECTOR */}
       //         {/* We use a simplified vertical connector for guaranteed mobile alignment */}
       //         <svg className="absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 pointer-events-none">
-      //            <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#ffe4e6" strokeWidth="2" strokeDasharray="8 4" />
-      //            <motion.line 
-      //              initial={{ height: 0 }}
-      //              animate={{ height: `${(litHearts.length / promises.length) * 100}%` }}
-      //              x1="50%" y1="0" x2="50%" y2="100%" 
-      //              stroke="#fb7185" strokeWidth="3" 
-      //              style={{ filter: 'drop-shadow(0 0 8px #fb7185)' }}
-      //            />
+      //           <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#ffe4e6" strokeWidth="2" strokeDasharray="8 4" />
+      //           <motion.line
+      //             initial={{ height: 0 }}
+      //             animate={{ height: `${(litHearts.length / promises.length) * 100}%` }}
+      //             x1="50%" y1="0" x2="50%" y2="100%"
+      //             stroke="#fb7185" strokeWidth="3"
+      //             style={{ filter: 'drop-shadow(0 0 8px #fb7185)' }}
+      //           />
       //         </svg>
 
       //         <div className="relative flex flex-col items-center gap-16 z-10">
@@ -604,8 +604,8 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
       //                   }}
       //                   whileTap={{ scale: 0.9 }}
       //                   className={`group flex items-center gap-3 p-2 rounded-2xl transition-all duration-700 border-2
-      //                     ${isLit 
-      //                       ? 'bg-white border-rose-300 shadow-xl' 
+      //                     ${isLit
+      //                       ? 'bg-white border-rose-300 shadow-xl'
       //                       : canLit ? 'bg-white/60 border-rose-100 animate-pulse' : 'bg-rose-50/30 border-transparent opacity-40'}`}
       //                 >
       //                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl transition-all duration-1000
@@ -634,7 +634,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
       //       {/* 3. THE FINAL VOW CARD (Fixed at bottom with Slide-In) */}
       //       <AnimatePresence>
       //         {litHearts.length === promises.length && (
-      //           <motion.div 
+      //           <motion.div
       //             initial={{ y: 200 }}
       //             animate={{ y: 0 }}
       //             className="absolute bottom-0 left-0 right-0 z-50 p-6 bg-gradient-to-t from-rose-100 via-rose-50 to-transparent"
@@ -662,7 +662,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
           { text: "Honesty", icon: "💎", color: "from-rose-100 to-rose-200" },
           { text: "Respect", icon: "🛡️", color: "from-pink-100 to-rose-100" },
           { text: "Safety", icon: "🏡", color: "from-orange-50 to-rose-100" },
-          { text: "Kindness", icon: "🌸", color: "from-rose-50 to-pink-100" },
+          { text: "Kindness", icon: "🕊️", color: "from-rose-50 to-pink-100" },
           { text: "Patience", icon: "⏳", color: "from-yellow-50 to-rose-100" }
         ];
 
@@ -800,6 +800,9 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
                     <h3 className="font-romantic text-3xl text-rose-950 mb-2 italic">Iti, My Promise</h3>
                     <p className="text-rose-800/70 text-sm sm:text-base leading-relaxed italic px-2">
                       "A thousand words may fade, but these promises are written in the stars of our journey. I'm yours, forever."
+                    </p>
+                    <p className="text-rose-800/80 text-xs sm:text-sm mt-2 leading-relaxed italic px-4">
+                      "Iti, these aren't just words; they are the gravity that keeps my world orbiting around you."
                     </p>
 
                     <div className="mt-8 flex justify-center gap-3">
@@ -1081,7 +1084,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
         if (vDayStage === 'LIGHTING') {
           return (
             <div className="relative h-72 sm:h-96 w-full flex flex-col items-center justify-center px-4">
-              <p className="font-romantic text-2xl sm:text-4xl text-rose-900 mb-10 sm:mb-16 text-center italic">"Light 5 hearts for Iti..."</p>
+              <p className="font-romantic text-2xl sm:text-4xl text-rose-900 mb-10 sm:mb-16 text-center italic">"Light them slowly. Each one is a thank you...."</p>
               <div className="flex space-x-3 sm:space-x-6">
                 {[1, 2, 3, 4, 5].map(i => (
                   <div
@@ -1145,9 +1148,17 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
                 </div>
                 <h2 className="text-3xl sm:text-5xl font-romantic text-rose-950 text-center border-b border-rose-100 pb-6 sm:pb-8">Dearest Iti,</h2>
                 <div className="space-y-6 sm:space-y-10 text-rose-900 font-elegant italic text-lg sm:text-3xl leading-relaxed text-center px-2">
-                  <p>"This was more than just words. It was my heart reaching yours across the miles."</p>
-                  <p>"Every petal, every promise, every hug was for you: you are truly, deeply important to me."</p>
-                  <p>"Thank you for being Iti. You've turned this week into magic."</p>
+                  <p>"This journey was more than just pixels on a screen. It was my way of reaching out to you, across every mile that separates us."</p>
+                  
+                  <p>"Every petal matched, every promise made, and every digital hug was a reminder: you are truly, deeply important to me."</p>
+                  <p>
+                    "You are my peace in the chaos, my light in the dark, and the person I want to tell everything to, first thing in the morning and last thing at night."
+                  </p>
+                  <p>"Thank you for being in my life. And today, I wanted to say it clearly You are my favorite person, Fulei."</p>
+
+
+                  
+
                 </div>
                 <div className="pt-8 sm:pt-16 flex flex-col items-center">
                   <div className="w-12 h-0.5 bg-rose-200 mb-6"></div>
@@ -1192,15 +1203,15 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
                 onClick={() => { setInteractionState('SOON'); triggerHaptic(100); }}
                 className="px-8 py-4 sm:px-14 sm:py-6 glass rounded-[30px] sm:rounded-[40px] text-rose-950 font-black border border-rose-200 tracking-widest text-xs sm:text-base uppercase"
               >
-                Give me time...
+                Give me a little time...
               </InteractiveButton>
             </div>
             {interactionState && typeof interactionState === 'string' && (
               <div className="mt-12 p-8 sm:p-16 glass rounded-[35px] sm:rounded-[80px] border-2 border-rose-300 shadow-2xl animate-reveal-up bg-white/95 mx-2">
                 <p className="text-rose-950 font-romantic text-2xl sm:text-6xl leading-snug shimmer-text">
                   {interactionState === 'YES'
-                    ? "You just made my entire world, Iti. 💙"
-                    : "No pressure, Iti. I'll be waiting. 🌸"}
+                    ? "You just made my heart dance 💙"
+                    : "No pressure, I'll be waiting. 🌸"}
                 </p>
               </div>
             )}

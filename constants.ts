@@ -67,7 +67,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 3,
-    date: "2026-02-09",
+    date: "2025-02-09",
     title: "Chocolate Day",
     theme: "Sweetest Soul",
     emoji: "🍫",
@@ -78,9 +78,9 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 4,
-    date: "2026-02-10",
+    date: "2025-02-10",
     title: "Teddy Day",
-    theme: "Warm Hugs",
+    theme: "Care & Safety",
     emoji: "🧸",
     musicUrl: teddyMusic,
     musicMood: "Calm lo-fi",
@@ -89,7 +89,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 5,
-    date: "2026-02-11",
+    date: "2025-02-11",
     title: "Promise Day",
     theme: "Silent Vows",
     emoji: "🤝",
@@ -100,7 +100,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 6,
-    date: "2026-02-12",
+    date: "2025-02-12",
     title: "Hug Day",
     theme: "Distance Apart",
     emoji: "🤗",
@@ -111,7 +111,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 7,
-    date: "2026-02-13",
+    date: "2025-02-13",
     title: "Kiss Day",
     theme: "Pure Connection",
     emoji: "😘",
@@ -122,13 +122,13 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 8,
-    date: "2026-02-14",
+    date: "2025-02-14",
     title: "Valentine's Day",
     theme: "The Grand Gesture",
     emoji: "❤️",
     musicUrl: valentineMusic,
     musicMood: "Uplifting romantic",
-    content: "This journey was made just for you, Iti. You're the best thing that's happened to me this year.",
+    content: "This journey was made just for you, Iti. You’re the best thing to ever walk into my life, and having you by my side is all I’ll ever need.",
     passcode: "VALENTINE"
   }
 ];
@@ -137,7 +137,7 @@ export const CHOCOLATE_MESSAGES: ChocolateItem[] = [
   { id: 1, message: "Some smiles are sweeter than chocolate… yours is one." },
   { id: 2, message: "Every conversation with you feels like unwrapping a gift." },
   { id: 3, message: "Every time I think of you, the world feels softer." },
-  { id: 4, message: "You’re the unexpected chapter that makes my story worth rereading." },
+  { id: 4, message: "You’re the unexpected chapter that makes my story worth reading." },
   { id: 5, message: "You remind me that kindness can be the most beautiful strength." },
   { id: 6, message: "I don’t need a playlist when your voice is my favorite song." }
 ];
