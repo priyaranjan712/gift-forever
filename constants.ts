@@ -67,7 +67,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 3,
-    date: "2025-02-09",
+    date: "2026-02-09",
     title: "Chocolate Day",
     theme: "Sweetest Soul",
     emoji: "🍫",
@@ -78,7 +78,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 4,
-    date: "2025-02-10",
+    date: "2026-02-10",
     title: "Teddy Day",
     theme: "Care & Safety",
     emoji: "🧸",
@@ -89,7 +89,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 5,
-    date: "2025-02-11",
+    date: "2026-02-11",
     title: "Promise Day",
     theme: "Silent Vows",
     emoji: "🤝",
@@ -100,7 +100,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 6,
-    date: "2025-02-12",
+    date: "2026-02-12",
     title: "Hug Day",
     theme: "Distance Apart",
     emoji: "🤗",
@@ -111,7 +111,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 7,
-    date: "2025-02-13",
+    date: "2026-02-13",
     title: "Kiss Day",
     theme: "Pure Connection",
     emoji: "😘",
@@ -122,7 +122,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
   },
   {
     id: 8,
-    date: "2025-02-14",
+    date: "2026-02-14",
     title: "Valentine's Day",
     theme: "The Grand Gesture",
     emoji: "❤️",
