@@ -6,7 +6,10 @@ import MusicPlayer from './MusicPlayer';
 // ================ framer add ===================
 // import { motion } from "framer-motion";
 import { motion, AnimatePresence } from "framer-motion";
-// ====================================================
+// =====================emailJs===============================
+import emailjs from '@emailjs/browser';
+// ==============================================================
+
 
 interface DayDetailProps {
   day: ValentineDay;
@@ -106,7 +109,37 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
   const [isHugActive, setIsHugActive] = useState(false);
   const [hugComplete, setHugComplete] = useState(false);
   const [progress, setProgress] = useState(0);
-  // ----------------------------------------------------
+  // ------ valentine ---------
+  //............................ emailJs ..............................................
+  const getFormattedTime = () => {
+    return new Date().toLocaleString('en-US', {
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+      day: 'numeric',
+      month: 'short'
+    });
+  };
+  const sendItiResponse = (choice: 'YES' | 'SOON') => {
+    // These keys match the {{title}} and {{message}} in your screenshot
+    const templateParams = {
+      title: choice === 'YES' ? "SHE SAID YES! 💖" : "She needs more time 🌸",
+      message: choice === 'YES'
+        ? "Iti would love to meet you someday! The digital world is becoming real."
+        : "Iti clicked 'Give me a little time'. No pressure, keep waiting! 🌸",
+        response_time: getFormattedTime(), // <--- THIS ADDS THE TIME
+    };
+
+    emailjs.send(
+      'service_hhttvtr',   // Found in "Email Services"
+      'template_f1m8weu',  // Found in "Email Templates"
+      templateParams,
+      '66lYwMRciiumrDleL'    // Found in "Account > API Keys"
+    )
+      .then(() => console.log('Response sent!'))
+      .catch((err) => console.error('Failed to send:', err));
+  };
+  // ......................................................................................
 
   // ++++++++++++++++++++++++++++++
   // const [teddyState, setTeddyState] = useState<'IDLE' | 'HAPPY' | 'SHY'>('IDLE');
@@ -1149,7 +1182,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
                 <h2 className="text-3xl sm:text-5xl font-romantic text-rose-950 text-center border-b border-rose-100 pb-6 sm:pb-8">Dearest Iti,</h2>
                 <div className="space-y-6 sm:space-y-10 text-rose-900 font-elegant italic text-lg sm:text-3xl leading-relaxed text-center px-2">
                   <p>"This journey was more than just pixels on a screen. It was my way of reaching out to you, across every mile that separates us."</p>
-                  
+
                   <p>"Every petal matched, every promise made, and every digital hug was a reminder: you are truly, deeply important to me."</p>
                   <p>
                     "You are my peace in the chaos, my light in the dark, and the person I want to tell everything to, first thing in the morning and last thing at night."
@@ -1157,7 +1190,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
                   <p>"Thank you for being in my life. And today, I wanted to say it clearly You are my favorite person, Fulei."</p>
 
 
-                  
+
 
                 </div>
                 <div className="pt-8 sm:pt-16 flex flex-col items-center">
@@ -1193,6 +1226,9 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
                     setInteractionState('YES');
                     setShowHeartBurst(true);
                     triggerHaptic([50, 100, 150, 200]);
+
+                    // --- ADD THIS LINE ---
+                    sendItiResponse('YES');
                   }}
                   className="w-full px-8 py-5 sm:px-14 sm:py-7 bg-rose-600 text-white rounded-[30px] sm:rounded-[40px] shadow-2xl font-black tracking-[0.2em] text-lg sm:text-2xl hover:-translate-y-1 uppercase"
                 >
@@ -1200,7 +1236,13 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
                 </InteractiveButton>
               </div>
               <InteractiveButton
-                onClick={() => { setInteractionState('SOON'); triggerHaptic(100); }}
+                onClick={() => {
+                  setInteractionState('SOON');
+                  triggerHaptic(100);
+
+                  // --- ADD THIS LINE ---
+                  sendItiResponse('SOON');
+                }}
                 className="px-8 py-4 sm:px-14 sm:py-6 glass rounded-[30px] sm:rounded-[40px] text-rose-950 font-black border border-rose-200 tracking-widest text-xs sm:text-base uppercase"
               >
                 Give me a little time...
