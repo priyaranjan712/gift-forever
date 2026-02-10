@@ -91,11 +91,11 @@ export const VALENTINE_DAYS: ValentineDay[] = [
     id: 5,
     date: "2026-02-11",
     title: "Promise Day",
-    theme: "Silent Vows",
+    theme: "Everlasting Echoes",
     emoji: "🤝",
     musicUrl: promiseMusic,
     musicMood: "Ambient",
-    content: "I promise to be your calm in the storm, your listener in the silence, and your friend above all else.",
+    content: "I promise to be your calm in the storm, your listener in the silence, and your friend above all else. I promise to honor the unique soul-connection we share, trusting that whatever the future holds, it will always lead me back to you.",
     passcode: "PROMISE"
   },
   {
@@ -117,7 +117,7 @@ export const VALENTINE_DAYS: ValentineDay[] = [
     emoji: "😘",
     musicUrl: kissMusic,
     musicMood: "Slow romantic",
-    content: "Some connections go beyond touch. They live in the words we share and the silence we understand.",
+    content: "Some feelings don’t need physical touch to be felt. Your essence resonates with mine, regardless of the miles.",
     passcode: "KISS"
   },
   {

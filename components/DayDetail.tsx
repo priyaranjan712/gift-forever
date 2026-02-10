@@ -541,216 +541,46 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
         );
       // ================================================= teddy end ============================
 
-      // case 5:
-      //   {
-      //     const promises = ["Honesty", "Respect", "Safety", "Kindness", "Patience"];
-      //     return (
-      //       <div className="flex flex-col items-center space-y-8 sm:space-y-12 py-6 px-4">
-      //         <p className="font-romantic text-2xl sm:text-3xl text-rose-800 text-center italic">"Connect the stars of my promises, Iti."</p>
-      //         <div className="relative w-full max-w-sm h-48 sm:h-64 glass rounded-[30px] sm:rounded-[50px] overflow-hidden bg-rose-950/20 border-2 border-rose-100 flex items-center justify-center">
-      //           <div className="grid grid-cols-3 gap-6 sm:gap-8">
-      //             {promises.map((p, i) => (
-      //               <div
-      //                 key={p}
-      //                 onClick={() => {
-      //                   if (!litHearts.includes(i)) {
-      //                     setLitHearts([...litHearts, i]);
-      //                     triggerHaptic(30);
-      //                   }
-      //                 }}
-      //                 className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center transition-all duration-1000 cursor-pointer
-      //                     ${litHearts.includes(i) ? 'bg-yellow-200 text-rose-900 scale-125 shadow-[0_0_15px_#fef08a]' : 'bg-rose-100/20 text-white/40 grayscale'}`}
-      //               >
-      //                 ✨
-      //               </div>
-      //             ))}
-      //           </div>
-      //         </div>
-      //         {litHearts.length >= promises.length && (
-      //           <div className="animate-reveal-up p-6 sm:p-10 glass rounded-[35px] sm:rounded-[60px] border-2 border-rose-400 bg-white/95 shadow-xl text-center">
-      //             <p className="text-rose-950 font-romantic text-2xl sm:text-4xl italic leading-relaxed px-2">
-      //               "I'll keep your heart safe in my constellations, Iti."
-      //             </p>
-      //           </div>
-      //         )}
-      //       </div>
-      //     );
-      //   }
-
       // ========================= update promise ============================
-      // case 5: {
-      //   const promises = [
-      //     { text: "Honesty", icon: "💎" },
-      //     { text: "Respect", icon: "🛡️" },
-      //     { text: "Safety", icon: "🏡" },
-      //     { text: "Kindness", icon: "🌸" },
-      //     { text: "Patience", icon: "⏳" }
-      //   ];
-
-      //   return (
-      //     <div className="relative h-full w-full flex flex-col items-center bg-transparent touch-none overflow-hidden">
-
-      //       {/* 1. TOP HEADER SECTION */}
-      //       <div className="pt-6 pb-2 text-center z-20 shrink-0">
-      //         <h2 className="text-rose-800 font-romantic text-3xl sm:text-4xl px-4">
-      //           Celestial Vows
-      //         </h2>
-      //         <p className="text-rose-500/60 text-[10px] font-black uppercase tracking-[0.3em] mt-1">
-      //           Seal each promise to light our path
-      //         </p>
-      //       </div>
-
-      //       {/* 2. THE INTERACTIVE SCROLLABLE GALAXY */}
-      //       <div className="relative w-full flex-1 overflow-y-auto overflow-x-hidden px-6 py-10 scrollbar-hide">
-
-      //         {/* DYNAMIC SVG CONNECTOR */}
-      //         {/* We use a simplified vertical connector for guaranteed mobile alignment */}
-      //         <svg className="absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 pointer-events-none">
-      //           <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#ffe4e6" strokeWidth="2" strokeDasharray="8 4" />
-      //           <motion.line
-      //             initial={{ height: 0 }}
-      //             animate={{ height: `${(litHearts.length / promises.length) * 100}%` }}
-      //             x1="50%" y1="0" x2="50%" y2="100%"
-      //             stroke="#fb7185" strokeWidth="3"
-      //             style={{ filter: 'drop-shadow(0 0 8px #fb7185)' }}
-      //           />
-      //         </svg>
-
-      //         <div className="relative flex flex-col items-center gap-16 z-10">
-      //           {promises.map((p, i) => {
-      //             const isLit = litHearts.includes(i);
-      //             const canLit = i === 0 || litHearts.includes(i - 1);
-
-      //             return (
-      //               <motion.div
-      //                 key={p.text}
-      //                 initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
-      //                 animate={{ opacity: 1, x: 0 }}
-      //                 className={`relative flex items-center ${i % 2 === 0 ? 'self-start' : 'self-end'}`}
-      //               >
-      //                 <motion.button
-      //                   onClick={() => {
-      //                     if (!isLit && canLit) {
-      //                       setLitHearts([...litHearts, i]);
-      //                       triggerHaptic(50);
-      //                     }
-      //                   }}
-      //                   whileTap={{ scale: 0.9 }}
-      //                   className={`group flex items-center gap-3 p-2 rounded-2xl transition-all duration-700 border-2
-      //                     ${isLit
-      //                       ? 'bg-white border-rose-300 shadow-xl'
-      //                       : canLit ? 'bg-white/60 border-rose-100 animate-pulse' : 'bg-rose-50/30 border-transparent opacity-40'}`}
-      //                 >
-      //                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl transition-all duration-1000
-      //                     ${isLit ? 'bg-rose-500 text-white rotate-[360deg]' : 'bg-rose-100 text-rose-300'}`}>
-      //                     {isLit ? "✨" : p.icon}
-      //                   </div>
-
-      //                   <div className="flex flex-col items-start pr-4">
-      //                     <span className={`text-[10px] font-black uppercase tracking-widest ${isLit ? 'text-rose-400' : 'text-gray-400'}`}>
-      //                       {isLit ? 'Promise Sealed' : `Step ${i + 1}`}
-      //                     </span>
-      //                     <span className={`font-bold text-sm ${isLit ? 'text-rose-900' : 'text-rose-300'}`}>
-      //                       {p.text}
-      //                     </span>
-      //                   </div>
-      //                 </motion.button>
-      //               </motion.div>
-      //             );
-      //           })}
-      //         </div>
-
-      //         {/* Padding at the bottom to ensure the last star isn't covered by the card */}
-      //         <div className="h-64" />
-      //       </div>
-
-      //       {/* 3. THE FINAL VOW CARD (Fixed at bottom with Slide-In) */}
-      //       <AnimatePresence>
-      //         {litHearts.length === promises.length && (
-      //           <motion.div
-      //             initial={{ y: 200 }}
-      //             animate={{ y: 0 }}
-      //             className="absolute bottom-0 left-0 right-0 z-50 p-6 bg-gradient-to-t from-rose-100 via-rose-50 to-transparent"
-      //           >
-      //             <div className="glass w-full max-w-md mx-auto p-6 rounded-[35px] border-2 border-rose-300 bg-white/95 shadow-[0_-20px_50px_rgba(0,0,0,0.1)] text-center">
-      //               <div className="flex justify-center gap-3 mb-2 text-4xl animate-bounce">🤙💖</div>
-      //               <h3 className="font-romantic text-2xl text-rose-900">My Eternal Vow</h3>
-      //               <p className="text-rose-800/80 text-xs sm:text-sm mt-2 leading-relaxed italic px-4">
-      //                 "Iti, these aren't just words; they are the gravity that keeps my world orbiting around you."
-      //               </p>
-      //               <div className="mt-4 pt-4 border-t border-rose-100 font-black text-rose-400 text-[10px] uppercase tracking-[0.4em]">
-      //                 Pinky Promise Sealed
-      //               </div>
-      //             </div>
-      //           </motion.div>
-      //         )}
-      //       </AnimatePresence>
-      //     </div>
-      //   );
-      // }
-
-      // ++++++++++++++++++
       case 5: {
         const promises = [
-          { text: "Honesty", icon: "💎", color: "from-rose-100 to-rose-200" },
-          { text: "Respect", icon: "🛡️", color: "from-pink-100 to-rose-100" },
-          { text: "Safety", icon: "🏡", color: "from-orange-50 to-rose-100" },
-          { text: "Kindness", icon: "🕊️", color: "from-rose-50 to-pink-100" },
-          { text: "Patience", icon: "⏳", color: "from-yellow-50 to-rose-100" }
+          { text: "Honesty", icon: "💎" },
+          { text: "Respect", icon: "🛡️" },
+          { text: "Safety", icon: "🏡" },
+          { text: "Kindness", icon: "🕊️" },
+          { text: "Patience", icon: "⏳" }
         ];
 
         return (
-          <div className="relative h-full w-full flex flex-col bg-[#fff5f6] overflow-hidden">
+          <div className="relative h-full w-full flex flex-col items-center bg-transparent touch-none overflow-hidden">
 
-            {/* 1. SOFT MESH BACKGROUND (Animated Blobs) */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 45, 0],
-                  x: [0, 50, 0]
-                }}
-                transition={{ duration: 20, repeat: Infinity }}
-                className="absolute -top-20 -left-20 w-96 h-96 bg-rose-200/30 blur-[100px] rounded-full"
-              />
-              <motion.div
-                animate={{
-                  scale: [1.2, 1, 1.2],
-                  x: [0, -30, 0],
-                  y: [0, 50, 0]
-                }}
-                transition={{ duration: 15, repeat: Infinity }}
-                className="absolute top-1/2 -right-20 w-80 h-80 bg-orange-100/40 blur-[100px] rounded-full"
-              />
-            </div>
-
-            {/* 2. HEADER */}
-            <div className="relative z-20 pt-8 pb-4 text-center shrink-0">
-              <motion.h2
-                initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                className="text-rose-800 font-romantic text-3xl sm:text-4xl italic"
-              >
-                The Vows of Us
-              </motion.h2>
-              <p className="text-rose-400 text-[10px] font-black uppercase tracking-[0.4em] mt-2">
-                Tap each heart to bloom our promise
+            {/* 1. TOP HEADER SECTION */}
+            <div className="pt-6 pb-2 text-center z-20 shrink-0">
+              <h2 className="text-rose-800 font-romantic text-3xl sm:text-4xl px-4">
+                Celestial Vows
+              </h2>
+              <p className="text-rose-500/60 text-[10px] font-black uppercase tracking-[0.3em] mt-1">
+                Seal each promise to light our path
               </p>
             </div>
 
-            {/* 3. THE INTERACTIVE VERTICAL PATH */}
-            <div className="relative flex-1 overflow-y-auto overflow-x-hidden px-6 py-10 scrollbar-hide z-10">
+            {/* 2. THE INTERACTIVE SCROLLABLE GALAXY */}
+            <div className="relative w-full flex-1 overflow-y-auto overflow-x-hidden px-6 py-10 scrollbar-hide">
 
-              {/* CENTER FLOW LINE (Soft Rose Gold) */}
-              <div className="absolute left-1/2 top-0 h-full w-[1.5px] -translate-x-1/2 bg-rose-200/50">
-                <motion.div
-                  className="w-full bg-gradient-to-b from-rose-400 to-rose-600 shadow-[0_0_10px_rgba(225,29,72,0.3)]"
+              {/* DYNAMIC SVG CONNECTOR */}
+              {/* We use a simplified vertical connector for guaranteed mobile alignment */}
+              <svg className="absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 pointer-events-none">
+                <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#ffe4e6" strokeWidth="2" strokeDasharray="8 4" />
+                <motion.line
                   initial={{ height: 0 }}
                   animate={{ height: `${(litHearts.length / promises.length) * 100}%` }}
+                  x1="50%" y1="0" x2="50%" y2="100%"
+                  stroke="#fb7185" strokeWidth="3"
+                  style={{ filter: 'drop-shadow(0 0 8px #fb7185)' }}
                 />
-              </div>
+              </svg>
 
-              <div className="relative flex flex-col items-center gap-24">
+              <div className="relative flex flex-col items-center gap-16 z-10">
                 {promises.map((p, i) => {
                   const isLit = litHearts.includes(i);
                   const canLit = i === 0 || litHearts.includes(i - 1);
@@ -758,97 +588,62 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
                   return (
                     <motion.div
                       key={p.text}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      className="relative w-full flex justify-center"
+                      initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      className={`relative flex items-center ${i % 2 === 0 ? 'self-start' : 'self-end'}`}
                     >
-                      {/* Node Junction */}
-                      <div className={`absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full z-20 border-4 border-[#fff5f6] transition-all duration-500
-                  ${isLit ? 'bg-rose-500 scale-125' : 'bg-rose-100'}`}
-                      />
-
                       <motion.button
                         onClick={() => {
                           if (!isLit && canLit) {
                             setLitHearts([...litHearts, i]);
-                            triggerHaptic([30, 20, 30]);
+                            triggerHaptic(50);
                           }
                         }}
-                        whileTap={canLit ? { scale: 0.9 } : {}}
-                        className={`relative flex flex-col items-center p-6 rounded-[2.5rem] transition-all duration-1000 w-full max-w-[220px] border
-                    ${isLit
-                            ? 'bg-white/80 backdrop-blur-md border-rose-200 shadow-[0_15px_30px_rgba(251,113,133,0.15)]'
-                            : canLit ? 'bg-white/40 border-white animate-pulse shadow-sm' : 'bg-transparent border-transparent opacity-20'}`}
+                        whileTap={{ scale: 0.9 }}
+                        className={`group flex items-center gap-3 p-2 rounded-2xl transition-all duration-700 border-2
+                          ${isLit
+                            ? 'bg-white border-rose-300 shadow-xl'
+                            : canLit ? 'bg-white/60 border-rose-100 animate-pulse' : 'bg-rose-50/30 border-transparent opacity-40'}`}
                       >
-                        <div className={`w-16 h-16 rounded-3xl flex items-center justify-center text-3xl mb-3 shadow-inner transition-all duration-1000
-                    ${isLit ? `bg-gradient-to-br ${p.color} text-rose-600 rotate-[360deg]` : 'bg-rose-50 text-rose-200'}`}>
-                          {isLit ? p.icon : "🔒"}
+                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl transition-all duration-1000
+                          ${isLit ? 'bg-rose-500 text-white rotate-[360deg]' : 'bg-rose-100 text-rose-300'}`}>
+                          {isLit ? "✨" : p.icon}
                         </div>
 
-                        <div className="text-center">
-                          <span className={`text-[9px] font-black uppercase tracking-[0.2em] block mb-1 ${isLit ? 'text-rose-400' : 'text-gray-300'}`}>
-                            {isLit ? 'Sealed With Love' : `Vow 0${i + 1}`}
+                        <div className="flex flex-col items-start pr-4">
+                          <span className={`text-[10px] font-black uppercase tracking-widest ${isLit ? 'text-rose-400' : 'text-gray-400'}`}>
+                            {isLit ? 'Promise Sealed' : `Step ${i + 1}`}
                           </span>
-                          <span className={`font-bold text-lg tracking-tight ${isLit ? 'text-rose-900' : 'text-rose-200'}`}>
+                          <span className={`font-bold text-sm ${isLit ? 'text-rose-900' : 'text-rose-300'}`}>
                             {p.text}
                           </span>
                         </div>
-
-                        {/* Floating Heart Particles (Only when lit) */}
-                        {isLit && (
-                          <motion.div
-                            initial={{ opacity: 0, y: 0 }}
-                            animate={{ opacity: [0, 1, 0], y: -50 }}
-                            transition={{ repeat: Infinity, duration: 2 }}
-                            className="absolute top-0 text-rose-400"
-                          >
-                            ❤️
-                          </motion.div>
-                        )}
                       </motion.button>
                     </motion.div>
                   );
                 })}
               </div>
-              <div className="h-80" />
+
+              {/* Padding at the bottom to ensure the last star isn't covered by the card */}
+              <div className="h-64" />
             </div>
 
-            {/* 4. THE ROMANTIC REVEAL CARD */}
+            {/* 3. THE FINAL VOW CARD (Fixed at bottom with Slide-In) */}
             <AnimatePresence>
               {litHearts.length === promises.length && (
                 <motion.div
-                  initial={{ y: 300, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  className="absolute bottom-0 left-0 right-0 z-50 p-6"
+                  initial={{ y: 200 }}
+                  animate={{ y: 0 }}
+                  className="absolute bottom-0 left-0 right-0 z-50 p-6 bg-gradient-to-t from-rose-100 via-rose-50 to-transparent"
                 >
-                  <div className="bg-white/95 backdrop-blur-xl rounded-[3rem] p-8 shadow-[0_-15px_50px_rgba(251,113,133,0.2)] text-center border border-rose-100">
-                    <motion.div
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ repeat: Infinity, duration: 1.5 }}
-                      className="text-5xl mb-4"
-                    >
-                      🤙💕
-                    </motion.div>
-                    <h3 className="font-romantic text-3xl text-rose-950 mb-2 italic">Iti, My Promise</h3>
-                    <p className="text-rose-800/70 text-sm sm:text-base leading-relaxed italic px-2">
-                      "A thousand words may fade, but these promises are written in the stars of our journey. I'm yours, forever."
-                    </p>
+                  <div className="glass w-full max-w-md mx-auto p-6 rounded-[35px] border-2 border-rose-300 bg-white/95 shadow-[0_-20px_50px_rgba(0,0,0,0.1)] text-center">
+                    <div className="flex justify-center gap-3 mb-2 text-4xl animate-bounce">🤙💖</div>
+                    <h3 className="font-romantic text-2xl text-rose-900">My Eternal Vow</h3>
                     <p className="text-rose-800/80 text-xs sm:text-sm mt-2 leading-relaxed italic px-4">
                       "Iti, these aren't just words; they are the gravity that keeps my world orbiting around you."
                     </p>
-
-                    <div className="mt-8 flex justify-center gap-3">
-                      {[...Array(3)].map((_, i) => (
-                        <motion.div
-                          key={i}
-                          animate={{ y: [0, -10, 0], opacity: [0.4, 1, 0.4] }}
-                          transition={{ repeat: Infinity, delay: i * 0.3 }}
-                          className="text-rose-300 text-xs"
-                        >
-                          🌸
-                        </motion.div>
-                      ))}
+                    <div className="mt-4 pt-4 border-t border-rose-100 font-black text-rose-400 text-[10px] uppercase tracking-[0.4em]">
+                      Pinky Promise Sealed
                     </div>
                   </div>
                 </motion.div>
@@ -857,6 +652,175 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
           </div>
         );
       }
+
+      // ++++++++++++++++++
+      // case 5: {
+      //   const promises = [
+      //     { text: "Honesty", icon: "💎", color: "from-rose-100 to-rose-200" },
+      //     { text: "Respect", icon: "🛡️", color: "from-pink-100 to-rose-100" },
+      //     { text: "Safety", icon: "🏡", color: "from-orange-50 to-rose-100" },
+      //     { text: "Kindness", icon: "🕊️", color: "from-rose-50 to-pink-100" },
+      //     { text: "Patience", icon: "⏳", color: "from-yellow-50 to-rose-100" }
+      //   ];
+
+      //   return (
+      //     <div className="relative h-full w-full flex flex-col bg-[#fff5f6] overflow-hidden">
+
+      //       {/* 1. SOFT MESH BACKGROUND (Animated Blobs) */}
+      //       <div className="absolute inset-0 z-0 overflow-hidden">
+      //         <motion.div
+      //           animate={{
+      //             scale: [1, 1.2, 1],
+      //             rotate: [0, 45, 0],
+      //             x: [0, 50, 0]
+      //           }}
+      //           transition={{ duration: 20, repeat: Infinity }}
+      //           className="absolute -top-20 -left-20 w-96 h-96 bg-rose-200/30 blur-[100px] rounded-full"
+      //         />
+      //         <motion.div
+      //           animate={{
+      //             scale: [1.2, 1, 1.2],
+      //             x: [0, -30, 0],
+      //             y: [0, 50, 0]
+      //           }}
+      //           transition={{ duration: 15, repeat: Infinity }}
+      //           className="absolute top-1/2 -right-20 w-80 h-80 bg-orange-100/40 blur-[100px] rounded-full"
+      //         />
+      //       </div>
+
+      //       {/* 2. HEADER */}
+      //       <div className="relative z-20 pt-8 pb-4 text-center shrink-0">
+      //         <motion.h2
+      //           initial={{ y: -20, opacity: 0 }}
+      //           animate={{ y: 0, opacity: 1 }}
+      //           className="text-rose-800 font-romantic text-3xl sm:text-4xl italic"
+      //         >
+      //           The Vows of Us
+      //         </motion.h2>
+      //         <p className="text-rose-400 text-[10px] font-black uppercase tracking-[0.4em] mt-2">
+      //           Tap each heart to bloom our promise
+      //         </p>
+      //       </div>
+
+      //       {/* 3. THE INTERACTIVE VERTICAL PATH */}
+      //       <div className="relative flex-1 overflow-y-auto overflow-x-hidden px-6 py-10 scrollbar-hide z-10">
+
+      //         {/* CENTER FLOW LINE (Soft Rose Gold) */}
+      //         <div className="absolute left-1/2 top-0 h-full w-[1.5px] -translate-x-1/2 bg-rose-200/50">
+      //           <motion.div
+      //             className="w-full bg-gradient-to-b from-rose-400 to-rose-600 shadow-[0_0_10px_rgba(225,29,72,0.3)]"
+      //             initial={{ height: 0 }}
+      //             animate={{ height: `${(litHearts.length / promises.length) * 100}%` }}
+      //           />
+      //         </div>
+
+      //         <div className="relative flex flex-col items-center gap-24">
+      //           {promises.map((p, i) => {
+      //             const isLit = litHearts.includes(i);
+      //             const canLit = i === 0 || litHearts.includes(i - 1);
+
+      //             return (
+      //               <motion.div
+      //                 key={p.text}
+      //                 initial={{ opacity: 0, y: 30 }}
+      //                 whileInView={{ opacity: 1, y: 0 }}
+      //                 viewport={{ once: true, margin: "-50px" }}
+      //                 className="relative w-full flex justify-center"
+      //               >
+      //                 {/* Node Junction */}
+      //                 <div className={`absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full z-20 border-4 border-[#fff5f6] transition-all duration-500
+      //             ${isLit ? 'bg-rose-500 scale-125' : 'bg-rose-100'}`}
+      //                 />
+
+      //                 <motion.button
+      //                   onClick={() => {
+      //                     if (!isLit && canLit) {
+      //                       setLitHearts([...litHearts, i]);
+      //                       triggerHaptic([30, 20, 30]);
+      //                     }
+      //                   }}
+      //                   whileTap={canLit ? { scale: 0.9 } : {}}
+      //                   className={`relative flex flex-col items-center p-6 rounded-[2.5rem] transition-all duration-1000 w-full max-w-[220px] border
+      //               ${isLit
+      //                       ? 'bg-white/80 backdrop-blur-md border-rose-200 shadow-[0_15px_30px_rgba(251,113,133,0.15)]'
+      //                       : canLit ? 'bg-white/40 border-white animate-pulse shadow-sm' : 'bg-transparent border-transparent opacity-20'}`}
+      //                 >
+      //                   <div className={`w-16 h-16 rounded-3xl flex items-center justify-center text-3xl mb-3 shadow-inner transition-all duration-1000
+      //               ${isLit ? `bg-gradient-to-br ${p.color} text-rose-600 rotate-[360deg]` : 'bg-rose-50 text-rose-200'}`}>
+      //                     {isLit ? p.icon : "🔒"}
+      //                   </div>
+
+      //                   <div className="text-center">
+      //                     <span className={`text-[9px] font-black uppercase tracking-[0.2em] block mb-1 ${isLit ? 'text-rose-400' : 'text-gray-300'}`}>
+      //                       {isLit ? 'Sealed With Love' : `Vow 0${i + 1}`}
+      //                     </span>
+      //                     <span className={`font-bold text-lg tracking-tight ${isLit ? 'text-rose-900' : 'text-rose-200'}`}>
+      //                       {p.text}
+      //                     </span>
+      //                   </div>
+
+      //                   {/* Floating Heart Particles (Only when lit) */}
+      //                   {isLit && (
+      //                     <motion.div
+      //                       initial={{ opacity: 0, y: 0 }}
+      //                       animate={{ opacity: [0, 1, 0], y: -50 }}
+      //                       transition={{ repeat: Infinity, duration: 2 }}
+      //                       className="absolute top-0 text-rose-400"
+      //                     >
+      //                       ❤️
+      //                     </motion.div>
+      //                   )}
+      //                 </motion.button>
+      //               </motion.div>
+      //             );
+      //           })}
+      //         </div>
+      //         <div className="h-80" />
+      //       </div>
+
+      //       {/* 4. THE ROMANTIC REVEAL CARD */}
+      //       <AnimatePresence>
+      //         {litHearts.length === promises.length && (
+      //           <motion.div
+      //             initial={{ y: 300, opacity: 0 }}
+      //             animate={{ y: 0, opacity: 1 }}
+      //             className="absolute bottom-0 left-0 right-0 z-50 p-6"
+      //           >
+      //             <div className="bg-white/95 backdrop-blur-xl rounded-[3rem] p-8 shadow-[0_-15px_50px_rgba(251,113,133,0.2)] text-center border border-rose-100">
+      //               <motion.div
+      //                 animate={{ scale: [1, 1.2, 1] }}
+      //                 transition={{ repeat: Infinity, duration: 1.5 }}
+      //                 className="text-5xl mb-4"
+      //               >
+      //                 🤙💕
+      //               </motion.div>
+      //               <h3 className="font-romantic text-3xl text-rose-950 mb-2 italic">Iti, My Promise</h3>
+      //               <p className="text-rose-800/70 text-sm sm:text-base leading-relaxed italic px-2">
+      //                 "A thousand words may fade, but these promises are written in the stars of our journey. I'm yours, forever."
+      //               </p>
+      //               <p className="text-rose-800/80 text-xs sm:text-sm mt-2 leading-relaxed italic px-4">
+      //                 "Iti, these aren't just words; they are the gravity that keeps my world orbiting around you."
+      //               </p>
+
+      //               <div className="mt-8 flex justify-center gap-3">
+      //                 {[...Array(3)].map((_, i) => (
+      //                   <motion.div
+      //                     key={i}
+      //                     animate={{ y: [0, -10, 0], opacity: [0.4, 1, 0.4] }}
+      //                     transition={{ repeat: Infinity, delay: i * 0.3 }}
+      //                     className="text-rose-300 text-xs"
+      //                   >
+      //                     🌸
+      //                   </motion.div>
+      //                 ))}
+      //               </div>
+      //             </div>
+      //           </motion.div>
+      //         )}
+      //       </AnimatePresence>
+      //     </div>
+      //   );
+      // }
       // ++++++++++++++++++
       // ========================= end promise ===============================
 
