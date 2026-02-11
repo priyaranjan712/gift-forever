@@ -55,7 +55,7 @@ const MemoryGallery: React.FC<MemoryGalleryProps> = ({ onBack }) => {
           <button onClick={onBack} className="text-rose-400 font-bold uppercase tracking-widest text-[9px] hover:text-rose-600 transition-colors">
             ← Return to Chapters
           </button>
-          <p className="text-[9px] text-rose-200 uppercase tracking-widest italic pt-2">Hint: It's my name</p>
+          <p className="text-[9px] text-rose-200 uppercase tracking-widest italic pt-2">Hint:🤫</p>
         </div>
       </div>
     );
@@ -79,14 +79,14 @@ const MemoryGallery: React.FC<MemoryGalleryProps> = ({ onBack }) => {
               className="group relative"
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
-              <div 
+              <div
                 className="bg-[#fdfbf7] p-3 pb-8 sm:p-4 sm:pb-12 shadow-lg sm:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-700 group-hover:rotate-0 group-hover:scale-105 group-hover:-translate-y-2 rounded-sm border border-black/5"
                 style={{ transform: `rotate(${photo.rotation}deg)` }}
               >
                 <div className="aspect-[4/5] overflow-hidden bg-gray-100 mb-4 sm:mb-6">
-                  <img 
-                    src={photo.url} 
-                    alt={photo.caption} 
+                  <img
+                    src={photo.url}
+                    alt={photo.caption}
                     className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
                   />
                 </div>
@@ -105,7 +105,7 @@ const MemoryGallery: React.FC<MemoryGalleryProps> = ({ onBack }) => {
           </button>
         </div>
       </div>
-      <MusicPlayer url= {memoryGalleryMusic} />
+      <MusicPlayer url={memoryGalleryMusic} />
     </div>
   );
 };

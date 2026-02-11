@@ -127,7 +127,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
       message: choice === 'YES'
         ? "Iti would love to meet you someday! The digital world is becoming real."
         : "Iti clicked 'Give me a little time'. No pressure, keep waiting! 🌸",
-        response_time: getFormattedTime(), // <--- THIS ADDS THE TIME
+      response_time: getFormattedTime(), // <--- THIS ADDS THE TIME
     };
 
     emailjs.send(
@@ -165,11 +165,6 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
     }
   }, [day.id, unlocked]);
 
-  // const triggerHaptic = (pattern: number | number[]) => {
-  //   if ('vibrate' in navigator) {
-  //     navigator.vibrate(pattern);
-  //   }
-  // };
 
   // ============remove vibration==========
   const ENABLE_HAPTIC = false;
@@ -307,31 +302,6 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
 
       case 2:
         return (
-          // <div className="flex flex-col items-center space-y-8 sm:space-y-12">
-          //   <div className="text-center space-y-3 sm:space-y-4 px-4">
-          //     <p className="font-romantic text-2xl sm:text-4xl text-rose-800 italic">"Feel my digital pulse, Iti..."</p>
-          //     <div className="w-48 sm:w-64 h-2 bg-rose-100 mx-auto rounded-full overflow-hidden">
-          //       <div className="h-full bg-rose-500 transition-all duration-100" style={{ width: `${holdProgress}%` }}></div>
-          //     </div>
-          //   </div>
-          //   <InteractiveButton
-          //     onMouseDown={() => { setIsHolding(true); triggerHaptic([10, 100, 10]); }}
-          //     onMouseUp={() => { setIsHolding(false); setHoldProgress(0); }}
-          //     onTouchStart={() => { setIsHolding(true); triggerHaptic([10, 100, 10]); }}
-          //     onTouchEnd={() => { setIsHolding(false); setHoldProgress(0); }}
-          //     className={`w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 sm:border-8 border-rose-100 flex items-center justify-center text-4xl sm:text-6xl transition-all duration-500 ${isHolding ? 'scale-110 sm:scale-125 bg-rose-500 text-white shadow-2xl animate-pulse' : 'bg-white text-rose-500'}`}
-          //   >
-          //     ❤️
-          //   </InteractiveButton>
-          //   {holdProgress >= 100 && (
-          //     <div className="glass p-8 sm:p-12 rounded-[35px] sm:rounded-[60px] border-2 border-rose-300 animate-reveal-up text-center bg-white/80 shadow-xl max-w-sm sm:max-w-lg mx-4">
-          //       <p className="font-romantic text-2xl sm:text-4xl text-rose-950 italic leading-relaxed shimmer-text">
-          //         "It beats like a drum for you, Iti. Every day."
-          //       </p>
-          //     </div>
-          //   )}
-          // </div>
-
           //edit  from V4===================
 
           <div className="flex flex-col items-center space-y-10">
@@ -384,28 +354,6 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
             )}
           </div>
         );
-
-      // case 4:
-      //   return (
-      //     <div className="flex flex-col items-center space-y-8 sm:space-y-12">
-      //       <div className="relative group cursor-pointer" onClick={() => {
-      //         setTeddyState('HAPPY');
-      //         triggerHaptic(50);
-      //         setTimeout(() => setTeddyState('IDLE'), 2000);
-      //       }}>
-      //         <div className={`text-[120px] sm:text-[180px] select-none transition-all duration-500 transform ${teddyState === 'HAPPY' ? 'scale-110' : teddyState === 'SHY' ? 'rotate-12' : ''}`}>
-      //           {teddyState === 'HAPPY' ? '🧸✨' : teddyState === 'SHY' ? '🧸😳' : '🧸'}
-      //         </div>
-      //       </div>
-      //       <div className="flex space-x-3 sm:space-x-4 px-4">
-      //         <InteractiveButton onClick={() => { setTeddyState('SHY'); setFeedbackMsg("Touched me! 🙈"); triggerHaptic(20); }} className="px-4 py-2 sm:px-6 sm:py-3 glass rounded-full text-rose-800 font-bold uppercase tracking-widest text-[10px]">Pinch</InteractiveButton>
-      //         <InteractiveButton onClick={() => { setTeddyState('HAPPY'); setFeedbackMsg("Yay! Head scratches! 🥰"); triggerHaptic(10); }} className="px-4 py-2 sm:px-6 sm:py-3 glass rounded-full text-rose-800 font-bold uppercase tracking-widest text-[10px]">Pat</InteractiveButton>
-      //       </div>
-      //       <div className="h-10 text-center px-4">
-      //         <p className="text-rose-600 font-romantic text-xl sm:text-3xl animate-bounce">{feedbackMsg || "Spend time with Iti's Teddy..."}</p>
-      //       </div>
-      //     </div>
-      //   );
 
       // ================== new update teddy =========================================
       case 4:
@@ -825,55 +773,6 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
       // ========================= end promise ===============================
 
 
-      // case 6:
-      //   return (
-      //     <div className="relative h-[400px] sm:h-[480px] w-full max-w-xs sm:max-w-sm mx-auto flex flex-col items-center justify-center overflow-hidden rounded-[40px] sm:rounded-[80px] glass border-2 border-rose-200 shadow-xl">
-      //       {!interactionState ? (
-      //         <div className="text-center space-y-8 sm:space-y-12 px-6">
-      //           <p className="font-romantic text-2xl sm:text-4xl text-rose-800 leading-tight italic">"Place both palms to close the gap, Iti..."</p>
-      //           <div className="flex flex-col space-y-6 sm:space-y-10">
-      //             <div
-      //               onPointerDown={() => { setMultiTouch(p => ({ ...p, p1: true })); triggerHaptic(10); }}
-      //               onPointerUp={() => setMultiTouch(p => ({ ...p, p1: false }))}
-      //               className={`w-24 h-24 sm:w-32 h-32 rounded-full glass border-2 sm:border-4 flex items-center justify-center text-4xl sm:text-5xl transition-all duration-500 ${multiTouch.p1 ? 'bg-rose-500 border-rose-300 scale-110 sm:scale-125 shadow-xl' : 'border-rose-100 opacity-60'}`}
-      //             >
-      //               👋
-      //             </div>
-      //             <div
-      //               onPointerDown={() => { setMultiTouch(p => ({ ...p, p2: true })); triggerHaptic(10); }}
-      //               onPointerUp={() => setMultiTouch(p => ({ ...p, p2: false }))}
-      //               className={`w-24 h-24 sm:w-32 h-32 rounded-full glass border-2 sm:border-4 flex items-center justify-center text-4xl sm:text-5xl transition-all duration-500 ${multiTouch.p2 ? 'bg-rose-500 border-rose-300 scale-110 sm:scale-125 shadow-xl' : 'border-rose-100 opacity-60'}`}
-      //             >
-      //               👋
-      //             </div>
-      //           </div>
-      //           {(multiTouch.p1 && multiTouch.p2) && (
-      //             <button
-      //               onClick={() => { setInteractionState(true); triggerHaptic([200, 300, 500, 800, 1500]); }}
-      //               className="mt-4 px-8 py-4 bg-rose-600 text-white rounded-full font-black tracking-widest animate-bounce shadow-xl text-sm"
-      //             >
-      //               HUG ME, ITI
-      //             </button>
-      //           )}
-      //         </div>
-      //       ) : (
-      //         <div className="absolute inset-0 bg-rose-600 flex flex-col items-center justify-center animate-pulse p-6 text-center space-y-6">
-      //           <div className="text-7xl sm:text-9xl mb-2 scale-125 sm:scale-150 drop-shadow-xl">🤗</div>
-      //           <p className="text-white font-romantic text-4xl sm:text-6xl leading-tight">Hold Tight.</p>
-      //           <p className="text-white/90 font-elegant italic text-lg sm:text-2xl leading-relaxed px-2">
-      //             "Can you feel it, Iti? The way the world stops?"
-      //           </p>
-      //           <InteractiveButton
-      //             onClick={() => setInteractionState(false)}
-      //             className="mt-8 text-white/50 text-[8px] uppercase tracking-[0.4em] font-black border-b border-white/30 pb-1"
-      //           >
-      //             (Pause the Embrace)
-      //           </InteractiveButton>
-      //         </div>
-      //       )}
-      //     </div>
-      //   );
-
       // =========================== update hug ===================================
       case 6: {
         return (
@@ -886,7 +785,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
                 opacity: isHugActive ? 0.6 : 0.2,
                 backgroundColor: isHugActive ? "#fda4af" : "#fff1f2"
               }}
-              transition={{ repeat: Infinity, duration: 2 }}
+              transition={{ repeat: Infinity, duration: 4 }}
               className="absolute inset-0 z-0 blur-[100px] rounded-full"
             />
 
@@ -896,7 +795,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
                 {hugComplete ? "The Warmest Embrace" : "Feel the Warmth"}
               </h2>
               <p className="text-rose-400 text-[9px] font-black uppercase tracking-[0.4em] mt-2">
-                {hugComplete ? "Connection Established" : "Hold the scanner to send a hug"}
+                {hugComplete ? "Connection Established" : "Press here to bridge the distance"}
               </p>
             </div>
 
@@ -942,7 +841,7 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: "100%" }}
-                        transition={{ duration: 3, ease: "linear" }}
+                        transition={{ duration: 7, ease: "linear" }}
                         onUpdate={(latest) => {
                           // Update the local progress for visual feedback
                           const p = parseFloat(latest.width);
@@ -1015,39 +914,150 @@ const DayDetail: React.FC<DayDetailProps> = ({ day, isInitiallyUnlocked, onBack,
       }
       // =========================== end Hug ======================================
 
+      // case 7:
+      //   return (
+      //     // edit from v4 =====================================================
+      //     <div className="flex flex-col items-center space-y-12">
+      //       <p className="font-romantic text-3xl text-rose-800 text-center px-4 leading-relaxed">
+      //         "Place your finger on the heart and blow a kiss to the screen..."
+      //       </p>
+      //       <InteractiveButton
+      //         onMouseDown={() => { setIsHolding(true); triggerHaptic(50); }}
+      //         onMouseUp={() => setIsHolding(false)}
+      //         onTouchStart={() => { setIsHolding(true); triggerHaptic(50); }}
+      //         onTouchEnd={() => setIsHolding(false)}
+      //         className={`w-40 h-40 rounded-full glass border-4 flex items-center justify-center transition-all duration-1000 ${isHolding ? 'border-rose-500 scale-150 shadow-[0_0_100px_rgba(225,29,72,0.6)]' : 'border-rose-100 shadow-xl'}`}
+      //       >
+      //         <div className={`text-6xl transition-transform duration-1000 ${isHolding ? 'scale-150 animate-pulse' : 'scale-100'}`}>😘</div>
+      //       </InteractiveButton>
+      //       {isHolding && (
+      //         <div className="fixed inset-0 pointer-events-none bg-rose-400/10 backdrop-blur-[2px] animate-pulse"></div>
+      //       )}
+      //       <div className={`transition-all duration-1000 text-center ${holdProgress >= 100 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      //         <p className="font-romantic text-4xl text-rose-950 shimmer-text">"That one reached my soul, Iti."</p>
+      //       </div>
+      //     </div>
+      //   );
+      //===========================start kiss========================================
       case 7:
         return (
-          // <div className="flex flex-col items-center space-y-8 sm:space-y-12 py-10 px-4">
-          //   <p className="font-romantic text-2xl sm:text-3xl text-rose-800 text-center italic">"Blow a kiss to the heart, Iti..."</p>
-          //   <InteractiveButton onMouseDown={() => { setIsHolding(true); triggerHaptic(50); }} onMouseUp={() => setIsHolding(false)} onTouchStart={() => { setIsHolding(true); triggerHaptic(50); }} onTouchEnd={() => setIsHolding(false)} className={`w-32 h-32 sm:w-40 sm:h-40 rounded-full glass border-2 sm:border-4 flex items-center justify-center transition-all duration-1000 ${isHolding ? 'border-rose-500 scale-125 sm:scale-150 shadow-2xl' : 'border-rose-100 shadow-lg'}`}>
-          //     <div className={`text-4xl sm:text-6xl transition-transform duration-1000 ${isHolding ? 'scale-125 sm:scale-150 animate-pulse' : 'scale-100'}`}>😘</div>
-          //   </InteractiveButton>
-          //   {isHolding && <div className="fixed inset-0 pointer-events-none bg-rose-400/10 backdrop-blur-[1px] animate-pulse z-0"></div>}
-          // </div>
+          <div className="relative h-[100dvh] w-full flex flex-col items-center bg-[#fffafa] overflow-hidden touch-none select-none">
 
-          // edit from v4 =====================================================
-          <div className="flex flex-col items-center space-y-12">
-            <p className="font-romantic text-3xl text-rose-800 text-center px-4 leading-relaxed">
-              "Place your finger on the heart and blow a kiss to the screen..."
-            </p>
-            <InteractiveButton
-              onMouseDown={() => { setIsHolding(true); triggerHaptic(50); }}
-              onMouseUp={() => setIsHolding(false)}
-              onTouchStart={() => { setIsHolding(true); triggerHaptic(50); }}
-              onTouchEnd={() => setIsHolding(false)}
-              className={`w-40 h-40 rounded-full glass border-4 flex items-center justify-center transition-all duration-1000 ${isHolding ? 'border-rose-500 scale-150 shadow-[0_0_100px_rgba(225,29,72,0.6)]' : 'border-rose-100 shadow-xl'}`}
-            >
-              <div className={`text-6xl transition-transform duration-1000 ${isHolding ? 'scale-150 animate-pulse' : 'scale-100'}`}>😘</div>
-            </InteractiveButton>
-            {isHolding && (
-              <div className="fixed inset-0 pointer-events-none bg-rose-400/10 backdrop-blur-[2px] animate-pulse"></div>
-            )}
-            <div className={`transition-all duration-1000 text-center ${holdProgress >= 100 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <p className="font-romantic text-4xl text-rose-950 shimmer-text">"That one reached my soul, Iti."</p>
+            {/* 1. BACKGROUND BLUSH (Mobile Optimized) */}
+            <motion.div
+              animate={{
+                opacity: isHolding ? 0.5 : 0,
+              }}
+              className="absolute inset-0 bg-rose-200 blur-[80px] pointer-events-none z-0"
+            />
+
+            {/* 2. TOP SECTION (Instruction) */}
+            <div className="relative z-20 pt-16 pb-8 text-center px-6 h-1/4 flex items-end">
+              <motion.p
+                animate={{ opacity: isHolding ? 0.3 : 1 }}
+                className="font-romantic text-2xl sm:text-3xl text-rose-800 leading-tight italic"
+              >
+                "Close your eyes and press your lips right here... <br />
+                <span className="text-[10px] font-sans uppercase tracking-[0.2em] font-black text-rose-400 not-italic block mt-3">
+                  I'm waiting on the other side
+                </span>
+              </motion.p>
             </div>
+
+            {/* 3. CENTER SECTION (The Interactive Spot) */}
+            <div className="relative flex-1 w-full flex items-center justify-center z-10">
+              <div className="relative">
+                {/* Pulsing Aura */}
+                <AnimatePresence>
+                  {isHolding && (
+                    [...Array(2)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ scale: 0.8, opacity: 0.6 }}
+                        animate={{ scale: 2.2, opacity: 0 }}
+                        transition={{ repeat: Infinity, duration: 2, delay: i * 1 }}
+                        className="absolute inset-0 bg-rose-300 rounded-full"
+                      />
+                    ))
+                  )}
+                </AnimatePresence>
+
+                {/* THE KISS TARGET - Size adjusted for mobile lips/thumbs */}
+                <motion.div
+                  onPointerDown={() => {
+                    setIsHolding(true);
+                    triggerHaptic([40, 80, 40]);
+                  }}
+                  onPointerUp={() => setIsHolding(false)}
+                  onPointerLeave={() => setIsHolding(false)}
+                  className={`relative w-40 h-40 sm:w-48 sm:h-48 rounded-full flex items-center justify-center border-2 transition-all duration-500
+              ${isHolding ? 'bg-white/90 border-rose-400 shadow-2xl scale-110' : 'bg-white/40 border-rose-100 shadow-lg'}`}
+                >
+                  <motion.div
+                    animate={{ scale: isHolding ? [1, 1.1, 1] : 1 }}
+                    transition={{ repeat: Infinity, duration: 1 }}
+                    className="text-6xl sm:text-7xl"
+                  >
+                    {isHolding ? "💋" : "😘"}
+                  </motion.div>
+
+                  {/* Hidden Logic for Progress */}
+                  {isHolding && (
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: 4, ease: "linear" }}
+                      onUpdate={(latest) => {
+                        const p = parseFloat(latest.width);
+                        setHoldProgress(p);
+                        if (p >= 99) {
+                          triggerHaptic([100, 50, 100]);
+                        }
+                      }}
+                    />
+                  )}
+                </motion.div>
+              </div>
+            </div>
+
+            {/* 4. BOTTOM SECTION (Success Message) */}
+            <div className="relative z-20 h-1/3 w-full px-8 flex flex-col items-center">
+              <AnimatePresence>
+                {holdProgress >= 100 ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center"
+                  >
+                    <h3 className="font-romantic text-3xl text-rose-950 italic">
+                      "That one reached my soul, Iti."
+                    </h3>
+                    <div className="flex justify-center mt-3 gap-2">
+                      <span className="animate-bounce">💖</span>
+                      <span className="animate-bounce delay-75">✨</span>
+                      <span className="animate-bounce delay-150">💖</span>
+                    </div>
+                  </motion.div>
+                ) : (
+                  /* Progress percentage shown only when holding */
+                  isHolding && (
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="text-rose-400 font-black text-[10px] tracking-widest uppercase"
+                    >
+                      Catching your kiss... {Math.round(holdProgress)}%
+                    </motion.p>
+                  )
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Small padding for bottom gesture bars on modern iPhones */}
+            <div className="h-8 w-full" />
           </div>
-          //===================================================================
         );
+      // ==========================end kiss==========================================
 
       case 8:
         const handleHeartLight = (id: number) => {

@@ -5,6 +5,7 @@ import { AppView, ValentineDay } from './types';
 import BackgroundEffects from './components/BackgroundEffects';
 import DayDetail from './components/DayDetail';
 import MemoryGallery from './components/MemoryGallery';
+import PrivateLetterbox from './components/PrivateLetterbox';
 
 const App: React.FC = () => {
   const [view, setView] = useState<AppView>('LOGIN');
@@ -235,6 +236,12 @@ const App: React.FC = () => {
             );
           })}
         </div>
+        {/* ========= add private letter box */}
+        {/* --- ADD COMPONENT HERE --- */}
+        <PrivateLetterbox
+          isDateReached={isUnlockedByDate(VALENTINE_DAYS[0])}
+        />
+        {/* =================================== */}
 
         <footer className="text-center py-8 sm:py-16 space-y-6 sm:space-y-8">
           <div className="flex justify-center space-x-2 sm:space-x-4">
